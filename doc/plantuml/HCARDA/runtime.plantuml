@@ -1,0 +1,34 @@
+@startuml
+
+
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace exceptions.runtime {
+      class de.gematik.ti.healthcardaccess.exceptions.runtime.BasicChannelException {
+          + BasicChannelException()
+          + BasicChannelException()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace exceptions.runtime {
+      class de.gematik.ti.healthcardaccess.exceptions.runtime.Version2ReaderException {
+          {static} + MESSAGE : String
+          + Version2ReaderException()
+      }
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+@enduml

@@ -1,0 +1,24 @@
+[[section-introduction-and-goals]]
+== Introduction and Goals
+This library shall help Android software developers to create Apps which are enabled to access, view and manage data on the German Health Insurance Card.
+The German Health Insurance Card is a smartcard, based on international inter-industrie standard ISO 7816.
+Thus this library delivers functionality in order to read from and write data to such a smartcard.
+
+=== Requirements Overview
+
+
+
+=== Quality Goals
+
+
+
+=== Stakeholders
+
+
+
+[options="header",cols="1,2,2"]
+|===
+|Role/Name|Contact|Expectations
+| <Role-1> | _<Contact-1>_ | _<Expectation-1>_
+| _<Role-2>_ | _<Contact-2>_ | _<Expectation-2>_
+|===

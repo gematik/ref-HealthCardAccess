@@ -1,0 +1,38 @@
+@startuml
+
+
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      namespace df.hpa {
+        class cardfilesystem.hba2mf.df.hpa.Ef {
+            {static} + HPD : Hpd
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      namespace df.hpa {
+        class cardfilesystem.hba2mf.df.hpa.Ef.Hpd {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  cardfilesystem.hba2mf.df.hpa.Ef +-down- cardfilesystem.hba2mf.df.hpa.Ef.Hpd
+
+
+
+
+
+
+
+
+
+@enduml

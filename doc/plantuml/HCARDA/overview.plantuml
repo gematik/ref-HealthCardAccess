@@ -1,0 +1,216 @@
+@startuml
+
+  package cardfilesystem {
+    class Egk21FileSystem {
+        {static} + AID : String
+        {static} + FID : int
+        {static} + EF : Ef
+        {static} + DF : Df
+        {static} + MRPIN : MrPin
+        {static} + PIN : Pin
+        {static} + PrK : PrK
+        {static} + SK : Sk
+    }
+  }
+
+
+  package cardfilesystem {
+    class Egk2FileSystem {
+        {static} + AID : String
+        {static} + FID : int
+        {static} + EF : Ef
+        {static} + DF : Df
+        {static} + MRPIN : MrPin
+        {static} + PIN : Pin
+        {static} + PrK : PrK
+        {static} + SK : Sk
+    }
+  }
+
+
+  package cardfilesystem {
+    class Hba21FileSystem {
+        {static} + AID : String
+        {static} + FID : int
+        {static} + EF : Ef
+        {static} + DF : Df
+        {static} + PIN : Pin
+        {static} + PrK : PrK
+        {static} + SK : Sk
+    }
+  }
+
+
+  package cardfilesystem {
+    class Hba2FileSystem {
+        {static} + AID : String
+        {static} + FID : int
+        {static} + EF : Ef
+        {static} + DF : Df
+        {static} + PIN : Pin
+        {static} + PrK : PrK
+        {static} + SK : Sk
+    }
+  }
+
+
+  package cardfilesystem {
+    class Smcb21FileSystem {
+        {static} + AID : String
+        {static} + FID : int
+        {static} + EF : Ef
+        {static} + DF : Df
+        {static} + PIN : Pin
+        {static} + PrK : PrK
+        {static} + SK : Sk
+    }
+  }
+
+
+  package cardfilesystem {
+    class Smcb2FileSystem {
+        {static} + AID : String
+        {static} + FID : int
+        {static} + EF : Ef
+        {static} + DF : Df
+        {static} + PIN : Pin
+        {static} + PrK : PrK
+        {static} + SK : Sk
+    }
+  }
+
+
+    package de.gematik.ti.healthcardaccess {
+      abstract class AbstractHealthCardCommand {
+          {static} - LOG : Logger
+          {static} # NE_MAX_EXTENDED_LENGTH : int
+          {static} # NE_MAX_SHORT_LENGTH : int
+          {static} # EXPECT_ALL : int
+          # cla : int
+          # ins : int
+          # p1 : int
+          # p2 : int
+          # data : byte[]
+          # ne : int
+          # AbstractHealthCardCommand()
+          # AbstractHealthCardCommand()
+          {abstract} + getTechnicalResponseApdus()
+          - inferResponseStatusFromResponseCode()
+          + executeOn()
+          # sendApdu()
+          - getCommandApdu()
+      }
+    }
+
+
+    package de.gematik.ti.healthcardaccess {
+      class HealthCard {
+          {static} + BASIC_CHANNEL_IDX : int
+          {static} # MAX_LOGICAL_CHANNELS : int
+          - currentCardChannel : CardChannel
+          - associatedCard : Card
+          - status : IHealthCardStatus
+          - responseBufferSize : int
+          - openChannels : Vector<CardChannel>
+          + HealthCard()
+          # HealthCard()
+          + openLogicalChannel()
+          + closeChannel()
+          + setChannel()
+          + getCurrentCardChannel()
+          + getResponseBufferSize()
+          + getStatus()
+      }
+    }
+
+
+    package de.gematik.ti.healthcardaccess {
+      interface ICardItem {
+      }
+    }
+
+
+    package de.gematik.ti.healthcardaccess {
+      interface IHealthCard {
+          {abstract} + getCurrentCardChannel()
+          {abstract} + getResponseBufferSize()
+          {abstract} + getStatus()
+      }
+    }
+
+
+    package de.gematik.ti.healthcardaccess {
+      interface IHealthCardCommand {
+          {abstract} + executeOn()
+      }
+    }
+
+
+    package de.gematik.ti.healthcardaccess {
+      interface IHealthCardStatus {
+          {abstract} + isValid()
+      }
+    }
+
+
+    package de.gematik.ti.healthcardaccess {
+      interface IHealthCardType {
+      }
+    }
+
+
+    package de.gematik.ti.healthcardaccess {
+      class WrongCardChannelException {
+          + WrongCardChannelException()
+          + WrongCardChannelException()
+          + WrongCardChannelException()
+      }
+    }
+
+
+    package de.gematik.ti.healthcardaccess {
+      class WrongCardDataException {
+          + WrongCardDataException()
+          + WrongCardDataException()
+          + WrongCardDataException()
+      }
+    }
+
+    package de.gematik.ti.healthcardaccess {
+        package de.gematik.ti.healthcardaccess.result {
+          class Response {
+              - responseData : byte[]
+              + Response()
+              + getResponseStatus()
+              + getResponseData()
+          }
+        }
+      }
+
+      package de.gematik.ti.healthcardaccess {
+          package de.gematik.ti.healthcardaccess.cardobjects {
+          }
+        }
+    package de.gematik.ti.healthcardaccess {
+        package de.gematik.ti.healthcardaccess.healthcards {
+        }
+    }
+    package de.gematik.ti.healthcardaccess {
+        package de.gematik.ti.healthcardaccess.cardobjects {
+        }
+    }
+
+
+
+    AbstractHealthCardCommand -up-|> IHealthCardCommand
+    AbstractHealthCardCommand o-- Response : response
+    de.gematik.ti.healthcardaccess.healthcards -up-|> HealthCard
+    HealthCard -up-|> IHealthCard
+    HealthCard o-- IHealthCardStatus : status
+    HealthCard o-- WrongCardChannelException : throws
+    de.gematik.ti.healthcardaccess.cardobjects -up-|> ICardItem
+    de.gematik.ti.healthcardaccess.healthcards -up-|> IHealthCardType
+    de.gematik.ti.healthcardaccess.result o-- WrongCardDataException
+    de.gematik.ti.healthcardaccess.cardobjects o-- WrongCardDataException
+
+@enduml

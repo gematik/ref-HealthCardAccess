@@ -1,0 +1,43 @@
+include::config.adoc[]
+
+[[section-system-scope-and-context]]
+== System Scope and Context
+Following picture depicts the system context of this library.
+
+image::system_context.png[System Context]
+
+There are following main groups of use cases the library supports:
+
+* Smartcard access
+* Authenticity and Validity Verification
+* Smartcard Authentication
+* Secure Storage
+
+The library makes use of Android or iOS operatin system functionality in order to access smartcards
+connected inserted into card readers connected to the device.
+Card readers can be connected to the device via
+
+* USB
+* Bluetooth
+
+Smartcards can also be connected to the device via builtin link:https://en.wikipedia.org/wiki/Near-field_communication[NFC] support.
+
+
+
+=== Business Context
+
+
+
+**<Diagram or Table>**
+
+**<optionally: Explanation of external domain interfaces>**
+
+=== Technical Context
+
+
+
+**<Diagram or Table>**
+
+**<optionally: Explanation of technical interfaces>**
+
+**<Mapping Input/Output to Channels>**

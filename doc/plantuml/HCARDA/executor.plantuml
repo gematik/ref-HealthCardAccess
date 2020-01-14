@@ -1,0 +1,32 @@
+@startuml
+
+
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace operation {
+      namespace executor {
+        class de.gematik.ti.healthcardaccess.operation.executor.TrampolineExecutorService {
+            - terminated : boolean
+            + awaitTermination()
+            + execute()
+            + isShutdown()
+            + isTerminated()
+            + shutdown()
+            + shutdownNow()
+        }
+      }
+    }
+  }
+  
+
+  de.gematik.ti.healthcardaccess.operation.executor.TrampolineExecutorService -up-|> java.util.concurrent.AbstractExecutorService
+
+
+
+
+
+
+
+
+
+@enduml

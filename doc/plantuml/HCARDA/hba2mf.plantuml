@@ -1,0 +1,378 @@
+@startuml
+
+
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Df {
+          {static} + AUTO : Auto
+          {static} + CIA_ESIGN : CiaEsign
+          {static} + CIA_QES : CiaQes
+          {static} + ESIGN : Esign
+          {static} + HPA : Hpa
+          {static} + QES : Qes
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Df.Auto {
+          {static} + AID : String
+          {static} + EF : Ef
+          {static} + PIN : Pin
+          {static} + PrK : PrK
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Df.CiaEsign {
+          {static} + AID : String
+          {static} + EF : Ef
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Df.CiaQes {
+          {static} + AID : String
+          {static} + EF : Ef
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Df.Esign {
+          {static} + AID : String
+          {static} + EF : Ef
+          {static} + PrK : PrK
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Df.Hpa {
+          {static} + AID : String
+          {static} + EF : Ef
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Df.Qes {
+          {static} + AID : String
+          {static} + EF : Ef
+          {static} + PIN : Pin
+          {static} + PrK : PrK
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Ef {
+          {static} + ATR : Atr
+          {static} + C_CA_HPC_CS_E256 : CcaHpcCsE256
+          {static} + C_CA_HPC_CS_R2048 : CcaHpcCsR2048
+          {static} + C_HPC_AUTD_SUK_CVC_E256 : ChpcAutdSukCvcE256
+          {static} + C_HPC_AUTR_CVC_E256 : ChpcAutrCvcE256
+          {static} + C_HPC_AUTR_CVC_R2048 : ChpcAutrCvcR2048
+          {static} + CardAccess : CardAccess
+          {static} + DIR : Dir
+          {static} + GDO : Gdo
+          {static} + Version2 : Version2
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Ef.Atr {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Ef.CardAccess {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Ef.CcaHpcCsE256 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Ef.CcaHpcCsR2048 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Ef.ChpcAutdSukCvcE256 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Ef.ChpcAutrCvcE256 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Ef.ChpcAutrCvcR2048 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Ef.Dir {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Ef.Gdo {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Ef.Version2 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Pin {
+          {static} + CH : Ch
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Pin.Ch {
+          {static} + PWID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.PrK {
+          {static} + HPC_AUTD_SUK_CVC_E256 : HpcAutdSukCvcE256
+          {static} + HPC_AUTR_CVC_E256 : HpcAutrCvcE256
+          {static} + HPC_AUTR_CVC_R2048 : HpcAutrCvcR2048
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.PrK.HpcAutdSukCvcE256 {
+          {static} + KID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.PrK.HpcAutrCvcE256 {
+          {static} + KID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.PrK.HpcAutrCvcR2048 {
+          {static} + KID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Sk {
+          {static} + CAN : Can
+          {static} + CMS_AES128 : CmsAes128
+          {static} + CMS_AES256 : CmsAes256
+          {static} + CUP_AES128 : CupAes128
+          {static} + CUP_AES256 : CupAes256
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Sk.Can {
+          {static} + KID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Sk.CmsAes128 {
+          {static} - KID : int
+          + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Sk.CmsAes256 {
+          {static} - KID : int
+          + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Sk.CupAes128 {
+          {static} - KID : int
+          + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      class cardfilesystem.hba2mf.Sk.CupAes256 {
+          {static} - KID : int
+          + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      interface cardfilesystem.hba2mf.Sk.ICMSSymkey {
+          {abstract} + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace hba2mf {
+      interface cardfilesystem.hba2mf.Sk.ICUPSymkey {
+          {abstract} + getKID()
+      }
+    }
+  }
+  
+
+  cardfilesystem.hba2mf.Df +-down- cardfilesystem.hba2mf.Df.Auto
+  cardfilesystem.hba2mf.Df +-down- cardfilesystem.hba2mf.Df.CiaEsign
+  cardfilesystem.hba2mf.Df +-down- cardfilesystem.hba2mf.Df.CiaQes
+  cardfilesystem.hba2mf.Df +-down- cardfilesystem.hba2mf.Df.Esign
+  cardfilesystem.hba2mf.Df +-down- cardfilesystem.hba2mf.Df.Hpa
+  cardfilesystem.hba2mf.Df +-down- cardfilesystem.hba2mf.Df.Qes
+  cardfilesystem.hba2mf.Ef +-down- cardfilesystem.hba2mf.Ef.Atr
+  cardfilesystem.hba2mf.Ef +-down- cardfilesystem.hba2mf.Ef.CardAccess
+  cardfilesystem.hba2mf.Ef +-down- cardfilesystem.hba2mf.Ef.CcaHpcCsE256
+  cardfilesystem.hba2mf.Ef +-down- cardfilesystem.hba2mf.Ef.CcaHpcCsR2048
+  cardfilesystem.hba2mf.Ef +-down- cardfilesystem.hba2mf.Ef.ChpcAutdSukCvcE256
+  cardfilesystem.hba2mf.Ef +-down- cardfilesystem.hba2mf.Ef.ChpcAutrCvcE256
+  cardfilesystem.hba2mf.Ef +-down- cardfilesystem.hba2mf.Ef.ChpcAutrCvcR2048
+  cardfilesystem.hba2mf.Ef +-down- cardfilesystem.hba2mf.Ef.Dir
+  cardfilesystem.hba2mf.Ef +-down- cardfilesystem.hba2mf.Ef.Gdo
+  cardfilesystem.hba2mf.Ef +-down- cardfilesystem.hba2mf.Ef.Version2
+  cardfilesystem.hba2mf.Pin +-down- cardfilesystem.hba2mf.Pin.Ch
+  cardfilesystem.hba2mf.PrK +-down- cardfilesystem.hba2mf.PrK.HpcAutdSukCvcE256
+  cardfilesystem.hba2mf.PrK +-down- cardfilesystem.hba2mf.PrK.HpcAutrCvcE256
+  cardfilesystem.hba2mf.PrK +-down- cardfilesystem.hba2mf.PrK.HpcAutrCvcR2048
+  cardfilesystem.hba2mf.Sk +-down- cardfilesystem.hba2mf.Sk.Can
+  cardfilesystem.hba2mf.Sk +-down- cardfilesystem.hba2mf.Sk.CmsAes128
+  cardfilesystem.hba2mf.Sk +-down- cardfilesystem.hba2mf.Sk.CmsAes256
+  cardfilesystem.hba2mf.Sk +-down- cardfilesystem.hba2mf.Sk.CupAes128
+  cardfilesystem.hba2mf.Sk +-down- cardfilesystem.hba2mf.Sk.CupAes256
+  cardfilesystem.hba2mf.Sk +-down- cardfilesystem.hba2mf.Sk.ICMSSymkey
+  cardfilesystem.hba2mf.Sk +-down- cardfilesystem.hba2mf.Sk.ICUPSymkey
+  cardfilesystem.hba2mf.Sk.CmsAes128 .up.|> cardfilesystem.hba2mf.Sk.ICMSSymkey
+  cardfilesystem.hba2mf.Sk.CmsAes256 .up.|> cardfilesystem.hba2mf.Sk.ICMSSymkey
+  cardfilesystem.hba2mf.Sk.CupAes128 .up.|> cardfilesystem.hba2mf.Sk.ICUPSymkey
+  cardfilesystem.hba2mf.Sk.CupAes256 .up.|> cardfilesystem.hba2mf.Sk.ICUPSymkey
+
+
+
+
+
+
+
+
+
+@enduml

@@ -1,0 +1,250 @@
+@startuml
+
+title __ESIGN's Class Diagram__\n
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.Ef {
+            {static} + C_CH_AUTN_E256 : CchAutnE256
+            {static} + C_CH_AUTN_R2048 : CchAutnR2048
+            {static} + C_CH_AUT_E256 : CchAutE256
+            {static} + C_CH_AUT_R2048 : CchAutR2048
+            {static} + C_CH_ENCV_E256 : CchEncvE256
+            {static} + C_CH_ENCV_R2048 : CchEncvR2048
+            {static} + C_CH_ENC_E256 : CchEncE256
+            {static} + C_CH_ENC_R2048 : CchEncR2048
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.Ef.CchAutE256 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.Ef.CchAutR2048 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.Ef.CchAutnE256 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.Ef.CchAutnR2048 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.Ef.CchEncE256 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.Ef.CchEncR2048 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.Ef.CchEncvE256 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.Ef.CchEncvR2048 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.PrK {
+            {static} + CH_AUTN_E256 : ChAutnE256
+            {static} + CH_AUTN_R2048 : ChAutnR2048
+            {static} + CH_AUT_E256 : ChAutE256
+            {static} + CH_AUT_R2048 : ChAutR2048
+            {static} + CH_ENCV_E256 : ChEncvE256
+            {static} + CH_ENCV_R2048 : ChEncvR2048
+            {static} + CH_ENC_E256 : ChEncE256
+            {static} + CH_ENC_R2048 : ChEncR2048
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.PrK.ChAutE256 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.PrK.ChAutR2048 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.PrK.ChAutnE256 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.PrK.ChAutnR2048 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.PrK.ChEncE256 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.PrK.ChEncR2048 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.PrK.ChEncvE256 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.esign {
+        class cardfilesystem.egk21mf.df.esign.PrK.ChEncvR2048 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  cardfilesystem.egk21mf.df.esign.Ef +-down- cardfilesystem.egk21mf.df.esign.Ef.CchAutE256
+  cardfilesystem.egk21mf.df.esign.Ef +-down- cardfilesystem.egk21mf.df.esign.Ef.CchAutR2048
+  cardfilesystem.egk21mf.df.esign.Ef +-down- cardfilesystem.egk21mf.df.esign.Ef.CchAutnE256
+  cardfilesystem.egk21mf.df.esign.Ef +-down- cardfilesystem.egk21mf.df.esign.Ef.CchAutnR2048
+  cardfilesystem.egk21mf.df.esign.Ef +-down- cardfilesystem.egk21mf.df.esign.Ef.CchEncE256
+  cardfilesystem.egk21mf.df.esign.Ef +-down- cardfilesystem.egk21mf.df.esign.Ef.CchEncR2048
+  cardfilesystem.egk21mf.df.esign.Ef +-down- cardfilesystem.egk21mf.df.esign.Ef.CchEncvE256
+  cardfilesystem.egk21mf.df.esign.Ef +-down- cardfilesystem.egk21mf.df.esign.Ef.CchEncvR2048
+  cardfilesystem.egk21mf.df.esign.PrK +-down- cardfilesystem.egk21mf.df.esign.PrK.ChAutE256
+  cardfilesystem.egk21mf.df.esign.PrK +-down- cardfilesystem.egk21mf.df.esign.PrK.ChAutR2048
+  cardfilesystem.egk21mf.df.esign.PrK +-down- cardfilesystem.egk21mf.df.esign.PrK.ChAutnE256
+  cardfilesystem.egk21mf.df.esign.PrK +-down- cardfilesystem.egk21mf.df.esign.PrK.ChAutnR2048
+  cardfilesystem.egk21mf.df.esign.PrK +-down- cardfilesystem.egk21mf.df.esign.PrK.ChEncE256
+  cardfilesystem.egk21mf.df.esign.PrK +-down- cardfilesystem.egk21mf.df.esign.PrK.ChEncR2048
+  cardfilesystem.egk21mf.df.esign.PrK +-down- cardfilesystem.egk21mf.df.esign.PrK.ChEncvE256
+  cardfilesystem.egk21mf.df.esign.PrK +-down- cardfilesystem.egk21mf.df.esign.PrK.ChEncvR2048
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

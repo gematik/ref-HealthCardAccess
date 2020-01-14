@@ -1,0 +1,149 @@
+include::config.adoc[]
+
+== Overview
+
+This library contains an package `cardfilesystem` which contains the card structure as classes for each supported health card type.
+Furthermore the `de.gematik.ti.healtcardaccess` package and subpackages contains the classes for cards, commands and error handling.
+
+ifndef::useCachePlantuml[]
+
+.HealthCardAccess Overview
+[plantuml, HCARDA/generated/overview, png, caption="{classdia-caption} {counter:class}: ", 650]
+----
+include::{plantumldir}/HCARDA/overview.plantuml[]
+----
+
+endif::useCachePlantuml[]
+ifdef::useCachePlantuml[]
+
+.HealthCardAccess Overview
+image::HCARDA/generated/overview.png[caption="{classdia-caption} {counter:class}: "]
+
+{empty} +
+
+endif::useCachePlantuml[]
+
+=== CardFileSystem
+
+The CardFileSystem represents the structure of health cards (EGK, HBA, SMCB, SMCK) and for specific generation (G2, G2.1).
+
+ifndef::useCachePlantuml[]
+
+.CardFileSystem
+[plantuml, HCARDA/generated/cardfilesystem, png, caption="{classdia-caption} {counter:class}: ", 650]
+----
+include::{plantumldir}/HCARDA/cardfilesystem.plantuml[]
+----
+
+endif::useCachePlantuml[]
+ifdef::useCachePlantuml[]
+
+.CardFileSystem
+image::HCARDA/generated/cardfilesystem.png[caption="{classdia-caption} {counter:class}: "]
+
+{empty} +
+
+endif::useCachePlantuml[]
+
+The entry object is one of `{TYPE}{GENERATION}FileSystem`. This contains the root structure for each type of card system. From this root point could you select the child's and so on.
+The following picture show exemplary for all FileSystems the complete EGK2 FileSystem structure.
+ifndef::useCachePlantuml[]
+.EGKG2 FileSystem
+[plantuml, HCARDA/generated/egk2mf, png, caption="{classdia-caption} {counter:class}: ", 650]
+----
+include::{plantumldir}/HCARDA/egk2mf.plantuml[]
+----
+
+endif::useCachePlantuml[]
+ifdef::useCachePlantuml[]
+
+.EGKG2 FileSystem
+image::HCARDA/generated/egk2mf.png[caption="{classdia-caption} {counter:class}: "]
+
+{empty} +
+
+endif::useCachePlantuml[]
+
+=== HealthCardAccess API
+
+The HealthCardAccess API Structure contains `healthcards` package with object represents all supported card types, `commands` and `result` package with all supported commands and responses for health cards,
+`cardobjects` package with possible object on health cards and `operation` package with functionalities to cascade and execute commands on health cards.
+ifndef::useCachePlantuml[]
+.Packages HealthCardAccess API
+[plantuml, HCARDA/generated/packages, png, caption="{classdia-caption} {counter:class}: ", 650]
+----
+include::{plantumldir}/HCARDA/packages.plantuml[]
+----
+
+endif::useCachePlantuml[]
+ifdef::useCachePlantuml[]
+
+.Packages HealthCardAccess API
+image::HCARDA/generated/packages.png[caption="{classdia-caption} {counter:class}: "]
+
+{empty} +
+
+endif::useCachePlantuml[]
+
+==== Health Cards
+The health card objects in `healthcards` package represent the potential types of health cards and this type is indirect stored on HealthCard objects with `IHealthCardStatus`.
+The implementation of `IHealthCardStatus` could `HealthCardStatusValid` and this stores the health card type.
+ifndef::useCachePlantuml[]
+
+.Health Cards
+[plantuml, HCARDA/generated/healthcards, png, caption="{classdia-caption} {counter:class}: ", 650]
+----
+include::{plantumldir}/HCARDA/healthcards.plantuml[]
+----
+
+endif::useCachePlantuml[]
+ifdef::useCachePlantuml[]
+
+.Health Cards
+image::HCARDA/generated/healthcards.png[caption="{classdia-caption} {counter:class}: "]
+
+{empty} +
+
+endif::useCachePlantuml[]
+Furthermore contains the `HealthCard` object the physical card from card reader, response buffer and channels.
+
+==== Commands
+
+The `commands` package contains all available commands for health cards.
+ifndef::useCachePlantuml[]
+
+.Commands
+[plantuml, HCARDA/generated/commands, png, caption="{classdia-caption} {counter:class}: ", 650]
+----
+include::{plantumldir}/HCARDA/commands.plantuml[]
+----
+
+endif::useCachePlantuml[]
+ifdef::useCachePlantuml[]
+
+.Commands
+image::HCARDA/generated/commands.png[caption="{classdia-caption} {counter:class}: "]
+
+{empty} +
+
+endif::useCachePlantuml[]
+
+==== Security
+
+The security and sub-package contains the key derivation function and the key entities.
+ifndef::useCachePlantuml[]
+.Security
+[plantuml, HCARDA/generated/security, png, caption="{classdia-caption} {counter:class}: ", 650]
+----
+include::{plantumldir}/HCARDA/security.plantuml[]
+----
+
+endif::useCachePlantuml[]
+ifdef::useCachePlantuml[]
+
+.Security
+image::HCARDA/generated/security.png[caption="{classdia-caption} {counter:class}: "]
+
+{empty} +
+
+endif::useCachePlantuml[]

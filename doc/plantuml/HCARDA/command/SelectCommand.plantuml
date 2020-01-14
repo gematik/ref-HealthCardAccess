@@ -1,0 +1,60 @@
+@startuml
+
+ package de.gematik.ti.healthcardaccess {
+    interface IHealthCardCommand {
+        {abstract} + executeOn()
+    }
+  }
+
+ package de.gematik.ti.healthcardaccess {
+    abstract class AbstractHealthCardCommand {
+        {static} - LOG : Logger
+        {static} # NE_MAX_EXTENDED_LENGTH : int
+        {static} # NE_MAX_SHORT_LENGTH : int
+        {static} # EXPECT_ALL : int
+        # cla : int
+        # ins : int
+        # p1 : int
+        # p2 : int
+        # data : byte[]
+        # ne : int
+        # AbstractHealthCardCommand()
+        # AbstractHealthCardCommand()
+        {abstract} + getTechnicalResponseApdus()
+        - inferResponseStatusFromResponseCode()
+        + executeOn()
+        # sendApdu()
+        - getCommandApdu()
+    }
+  }
+
+  package de.gematik.ti.healthcardaccess {
+      package de.gematik.ti.healthcardaccess.commands {
+        class SelectCommand {
+            {static} - CLA : int
+            {static} - INS : int
+            {static} - SELECTION_MODE_DF_BY_FID : int
+            {static} - SELECTION_MODE_EF_BY_FID : int
+            {static} - SELECTION_MODE_PARENT : int
+            {static} - SELECTION_MODE_AID : int
+            {static} - RESPONSE_TYPE_NO_RESPONSE : int
+            {static} - RESPONSE_TYPE_FCP : int
+            {static} - FILE_OCCURRENCE_FIRST : int
+            {static} - FILE_OCCURRENCE_NEXT : int
+            {static} - P2_FCP : int
+            {static} - P2 : int
+            {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+            + getTechnicalResponseApdus()
+            + SelectCommand()
+            + SelectCommand()
+            + SelectCommand()
+            + SelectCommand()
+            + SelectCommand()
+            - calculateP2()
+        }
+      }
+    }
+  AbstractHealthCardCommand -up-|> IHealthCardCommand
+  SelectCommand -up-|> AbstractHealthCardCommand
+
+@enduml

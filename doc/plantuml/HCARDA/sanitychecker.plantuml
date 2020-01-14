@@ -1,0 +1,356 @@
+@startuml
+
+
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.BER_TLV {
+          {static} - B51_11111 : int
+          {static} - B6_1 : int
+          {static} - B87_01 : int
+          {static} - B87_10 : int
+          {static} - B87_11 : int
+          {static} - B8_1 : int
+          {static} - RADIX_BIN_2 : int
+          {static} - RADIX_HEX_16 : int
+          {static} - WHITESPACE_00 : String
+          {static} - WHITESPACE_FF : String
+          - enclosedTLVs : ArrayList<BER_TLV>
+          - isEmptyRoot : boolean
+          - isWhitespaceBlock : boolean
+          - length : String
+          - tag : String
+          - value : String
+          + BER_TLV()
+          + BER_TLV()
+          + BER_TLV()
+          + BER_TLV()
+          + addChild()
+          + appendToValue()
+          + categorizeTag()
+          + findTag()
+          + getChildren()
+          + getLength()
+          + getLengthInt()
+          + getTag()
+          + getTlv()
+          + getValue()
+          + isConstructedDO()
+          {static} + isValidTlv()
+          {static} + main()
+          {static} + makeEven()
+          + printTLVStructure()
+          + setTag()
+          + setValue()
+          + toString()
+          + toTlvString()
+          - checkForTLV()
+          - checkTag()
+          - checkTlv()
+          - getBlankLength()
+          - getLengthAsInt()
+          - getXTimes()
+          - parseBERTLV()
+          - recalculateLength()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      enum BER_TLV_Class {
+        APPLICATION
+        CONTEXT_SPECIFIC
+        NO_TAG
+        PRIVATE
+        UNIVERSAL
+        WHITESPACE_BLOCK
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.CheckExternalMutualAuthenticateCommandImpl {
+          {static} + check()
+          - CheckExternalMutualAuthenticateCommandImpl()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.CheckInternalAuthenticateCommandImpl {
+          {static} + check()
+          - CheckInternalAuthenticateCommandImpl()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.CheckPsoComputeCryptographicChecksumImpl {
+          {static} - CRYPTO : boolean
+          {static} - INCORRECT_PARAMETER_DATAFIELD : ResponseStatus
+          {static} - TAG_DATA : String
+          {static} - TAG_MAC : String
+          {static} + check()
+          - CheckPsoComputeCryptographicChecksumImpl()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.CheckPsoComputeDigitalSignatureImpl {
+          {static} - INCORRECT_PARAMETER_DATAFIELD : ResponseStatus
+          {static} - TAG_HASH : String
+          {static} - TAG_PLAIN : String
+          {static} + check()
+          - CheckPsoComputeDigitalSignatureImpl()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.CheckPsoDecipherImpl {
+          {static} - CRYPTO : boolean
+          {static} - INCORRECT_PARAMETER_DATAFIELD : ResponseStatus
+          {static} - TAG_CIPHER : String
+          {static} - TAG_CIPHER_DO : String
+          {static} - TAG_KEY_DO : String
+          {static} - TAG_MAC_DO : String
+          {static} - TAG_OID_DO : String
+          {static} + check()
+          - CheckPsoDecipherImpl()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.CheckPsoEncipherImpl {
+          {static} - CRYPTO : boolean
+          {static} - INCORRECT_PARAMETER_DATAFIELD : ResponseStatus
+          {static} - TAG_ALG_DO : String
+          {static} - TAG_KEY_DO : String
+          {static} - TAG_PLAIN_DO : String
+          {static} - TAG_PUK_E : String
+          {static} - TAG_PUK_N : String
+          {static} + check()
+          - CheckPsoEncipherImpl()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.CheckPsoVerifyCertificateCommandImpl {
+          {static} - INCORRECT_PARAMETER_DATAFIELD : ResponseStatus
+          {static} - TAG_CERTIFICATE_CONTENT_CASE_7F4E : String
+          {static} - TAG_SIGNATURE : String
+          {static} + check()
+          - CheckPsoVerifyCertificateCommandImpl()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.CheckPsoVerifyDigitalSignatureImpl {
+          {static} - INCORRECT_PARAMETER_DATAFIELD : ResponseStatus
+          {static} - LOG : Logger
+          {static} - TAG_HASH : String
+          {static} - TAG_OID : String
+          {static} - TAG_POB : String
+          {static} - TAG_PUBKEY_7F49 : String
+          {static} - TAG_PUBKEY_9C : String
+          {static} - TAG_SIGNATURE : String
+          {static} + check()
+          - CheckPsoVerifyDigitalSignatureImpl()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.CmdDataChecker {
+          - checkDataLength : boolean
+          - currentCommandClazz : Object
+          - currentParameter : Object
+          - errorMessage : String
+          {static} - instance : ISanityChecker
+          - list : List<Object>
+          - valuePair : Map<Object, Object>
+          + check()
+          {static} + getInstance()
+          + setCurrentParameter()
+          + setMsgIncaseError()
+          + setSpecialConfigurationPair()
+          + setSpecifiedValues()
+          - clean()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.EnumsValidationChecker {
+          - errorMessage : String
+          {static} - instance : ISanityChecker
+          - list : List<Object>
+          + check()
+          {static} + getInstance()
+          + setMsgIncaseError()
+          + setSpecifiedValues()
+          - clean()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      interface de.gematik.ti.healthcardaccess.sanitychecker.ISanityChecker {
+          {static} + RESOURCE_BUNDLE : ResourceBundle
+          {abstract} + check()
+          + setCurrentParameter()
+          {abstract} + setMsgIncaseError()
+          + setSpecialConfigurationPair()
+          + setSpecifiedValues()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.IntegerRangeChecker {
+          {static} + MAX_OFFSET_WITHOUT_SFI_RANGE : int
+          {static} + MAX_OFFSET_WITH_SFI_RANGE : int
+          {static} + MAX_RECORD_DATA_LENGTH : int
+          {static} + MAX_RECORD_NUMBER : int
+          {static} + MAX_RECORD_SEARCH_STRING_LENGTH : int
+          {static} + MIN_OFFSET_RANGE : int
+          {static} + MIN_RECORD_DATA_LENGTH : int
+          {static} + MIN_RECORD_NUMBER : int
+          {static} + MIN_RECORD_SEARCH_STRING_LENGTH : int
+          {static} - LOG : Logger
+          - errorMessage : String
+          {static} - instance : ISanityChecker
+          - maxValue : Integer
+          - minValue : Integer
+          + check()
+          {static} + getInstance()
+          + setMsgIncaseError()
+          + setSpecialConfigurationPair()
+          - checkByRange()
+          - checkInteger()
+          - clean()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.ObjectIdentifier {
+          {static} + ANSIX9P256R1 : String
+          {static} + ANSIX9P384R1 : String
+          {static} + AUTHS_ISO9796_2_WITH_RSA_SHA256_MUTUAL : String
+          {static} + AUTS_GEMSPEC_COS_G2_ECC_WITH_SHA256 : String
+          {static} + AUTS_GEMSPEC_COS_G2_ECC_WITH_SHA384 : String
+          {static} + AUTS_GEMSPEC_COS_G2_ECC_WITH_SHA512 : String
+          {static} + BRAINPOOLP256R1 : String
+          {static} + BRAINPOOLP384R1 : String
+          {static} + BRAINPOOLP512R1 : String
+          {static} + CVC_FLAGLIST_CMS : String
+          {static} + CVC_FLAGLIST_TI : String
+          {static} + ECDSA_WITH_SHA256 : String
+          {static} + ECDSA_WITH_SHA384 : String
+          {static} + ECDSA_WITH_SHA512 : String
+          {static} + ELC_SHARED_SECRET_CALCULATION : String
+          {static} + ID_ELC_SHARED_SECRET_CALCULATION : String
+          {static} + PACE_ECDH_GM_AES_CBC_CMAC_128 : String
+          {static} + PACE_ECDH_GM_AES_CBC_CMAC_128_PCD : String
+          {static} + PACE_ECDH_GM_AES_CBC_CMAC_192 : String
+          {static} + PACE_ECDH_GM_AES_CBC_CMAC_192_PCD : String
+          {static} + PACE_ECDH_GM_AES_CBC_CMAC_256 : String
+          {static} + PACE_ECDH_GM_AES_CBC_CMAC_256_PCD : String
+          {static} + RSAES_OAEP : String
+          {static} + RSA_ENCRYPTION : String
+          {static} + SECP256R1 : String
+          {static} + SECP384R1 : String
+          {static} + SIGS_ISO9796_2_WITH_RSA_SHA256 : String
+          {static} - converterInstance : ObjectIdentifier
+          - name : String
+          - oidValueTable : Hashtable<String, String>
+          + ObjectIdentifier()
+          + ObjectIdentifier()
+          {static} + convertToName()
+          {static} + convertToValue()
+          + getName()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.SanityCheckFailedException {
+          {static} - LOG : Logger
+          + SanityCheckFailedException()
+          + SanityCheckFailedException()
+          + SanityCheckFailedException()
+          + SanityCheckFailedException()
+          + SanityCheckFailedException()
+          {static} - checkAndFormat()
+          {static} - checkAndFormat()
+          {static} - checkAndFormat()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace sanitychecker {
+      class de.gematik.ti.healthcardaccess.sanitychecker.ValueStateChecker {
+          {static} - LOG : Logger
+          - errorMessage : String
+          {static} - instance : ISanityChecker
+          + check()
+          {static} + getInstance()
+          + setMsgIncaseError()
+          - clean()
+      }
+    }
+  }
+  
+
+  de.gematik.ti.healthcardaccess.sanitychecker.BER_TLV +-down- de.gematik.ti.healthcardaccess.sanitychecker.BER_TLV.BER_TLV_Class
+  de.gematik.ti.healthcardaccess.sanitychecker.CmdDataChecker .up.|> de.gematik.ti.healthcardaccess.sanitychecker.ISanityChecker
+  de.gematik.ti.healthcardaccess.sanitychecker.EnumsValidationChecker .up.|> de.gematik.ti.healthcardaccess.sanitychecker.ISanityChecker
+  de.gematik.ti.healthcardaccess.sanitychecker.IntegerRangeChecker .up.|> de.gematik.ti.healthcardaccess.sanitychecker.ISanityChecker
+  de.gematik.ti.healthcardaccess.sanitychecker.ValueStateChecker .up.|> de.gematik.ti.healthcardaccess.sanitychecker.ISanityChecker
+
+
+
+
+
+
+
+
+
+@enduml

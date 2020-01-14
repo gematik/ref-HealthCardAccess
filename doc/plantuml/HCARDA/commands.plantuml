@@ -1,0 +1,860 @@
+@startuml
+
+
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.ActivateCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_CURRENT_SELECTION : int
+          {static} - MODE_PASSWORD_REFERENCE : int
+          {static} - MODE_PUBLIC_KEY_REFERENCE : int
+          {static} - MODE_SYM_OR_PRIVATE_KEY_REFERENCE : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - TAG_NO : int
+          + ActivateCommand()
+          + ActivateCommand()
+          + ActivateCommand()
+          + ActivateCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.ActivateRecordCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_USE_ALL_LIST_ELEMENTS_STARTING_FROM_P1 : int
+          {static} - MODE_USE_LIST_ELEMENT_P1 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + ActivateRecordCommand()
+          + ActivateRecordCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.AppendRecordCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          - checker : ISanityChecker<Integer>
+          + AppendRecordCommand()
+          + AppendRecordCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.ChangeReferenceDataCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_DATA_CONTAINS_NEW_SECRET : int
+          {static} - MODE_DATA_CONTAINS_OLD_AND_NEW_SECRET : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + ChangeReferenceDataCommand()
+          + ChangeReferenceDataCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.DeactivateCommand {
+          {static} + TAG_NO : int
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_CURRENT_SELECTION : int
+          {static} - MODE_PASSWORD_REFERENCE : int
+          {static} - MODE_PUBLIC_KEY_REFERENCE : int
+          {static} - MODE_SYM_OR_PRIVATE_KEY_REFERENCE : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + DeactivateCommand()
+          + DeactivateCommand()
+          + DeactivateCommand()
+          + DeactivateCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.DeactivateRecordCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_USE_ALL_LIST_ELEMENTS_STARTING_FROM_P1 : int
+          {static} - MODE_USE_LIST_ELEMENT_P1 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          - checker : ISanityChecker<Integer>
+          + DeactivateRecordCommand()
+          + DeactivateRecordCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.DeleteCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_CURRENT_SELECTION : int
+          {static} - MODE_PASSWORD_REFERENCE : int
+          {static} - MODE_PUBLIC_KEY_REFERENCE : int
+          {static} - MODE_SYM_OR_PRIVATE_KEY_REFERENCE : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - TAG_NO : int
+          + DeleteCommand()
+          + DeleteCommand()
+          + DeleteCommand()
+          + DeleteCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.DeleteRecordCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_USE_LIST_ELEMENT_P1 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          - checker : ISanityChecker<Integer>
+          + DeleteRecordCommand()
+          + DeleteRecordCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.DisableVerificationRequirementCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_NO_VERIFICATION_DATA : int
+          {static} - MODE_VERIFICATION_DATA : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + DisableVerificationRequirementCommand()
+          + DisableVerificationRequirementCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.EnableVerificationRequirementCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_NO_VERIFICATION_DATA : int
+          {static} - MODE_VERIFICATION_DATA : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + EnableVerificationRequirementCommand()
+          + EnableVerificationRequirementCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.EraseCommand {
+          {static} - BYTE_MODULO : int
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - SFI_MARKER : int
+          - checker : ISanityChecker<Integer>
+          + EraseCommand()
+          + EraseCommand()
+          + EraseCommand()
+          + EraseCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.EraseRecordCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_USE_LIST_ELEMENT_P1 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          - checker : ISanityChecker<Integer>
+          + EraseRecordCommand()
+          + EraseRecordCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.ExternalMutualAuthenticateCommand {
+          {static} - ALGORITHM_INFORMATION_PRESENT_P1 : int
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - KEY_REFERENCE_PRESENT_ON_CARD_P2 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - VALID_PSOALGO : Algorithm[]
+          + ExternalMutualAuthenticateCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.FingerprintCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + FingerprintCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.GeneralAuthenticateCommand {
+          {static} - CLA_COMMAND_CHAINING : int
+          {static} - CLA_NO_COMMAND_CHAINING : int
+          {static} - INS : int
+          {static} - LOG : Logger
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + GeneralAuthenticateCommand()
+          + GeneralAuthenticateCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.GenerateAsymmetricKeyPairCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_AFFECTED_OBJECT_VIA_KEY_REFERENCE_LIST_P2 : int
+          {static} - MODE_GENERATE_IF_KEY_NOT_EXISTS_WITHOUT_OUTPUT_P1 : int
+          {static} - MODE_GENERATE_IF_KEY_NOT_EXISTS_WITH_OUTPUT_P1 : int
+          {static} - MODE_OVERWRITE_IF_KEY_EXISTS_WITHOUT_OUTPUT_P1 : int
+          {static} - MODE_OVERWRITE_IF_KEY_EXISTS_WITH_OUTPUT_P1 : int
+          {static} - MODE_READ_PUBLIC_KEY_P1 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + GenerateAsymmetricKeyPairCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      enum GakpUseCase {
+        GEN_KEY_WO_OVERWRITE_WO_REFERENCE_WO_OUTPUT
+        GEN_KEY_WO_OVERWRITE_WO_REFERENCE_W_OUTPUT
+        GEN_KEY_WO_OVERWRITE_W_REFERENCE_WO_OUTPUT
+        GEN_KEY_WO_OVERWRITE_W_REFERENCE_W_OUTPUT
+        GEN_KEY_W_OVERWRITE_WO_REFERENCE_WO_OUTPUT
+        GEN_KEY_W_OVERWRITE_WO_REFERENCE_W_OUTPUT
+        GEN_KEY_W_OVERWRITE_W_REFERENCE_WO_OUTPUT
+        GEN_KEY_W_OVERWRITE_W_REFERENCE_W_OUTPUT
+        READ_EXISTING_KEY_WO_REFERENCE
+        READ_EXISTING_KEY_W_REFERENCE
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.GetChallengeCommand {
+          {static} - CLA : int
+          {static} - EXPECTED_LENGTH_08 : int
+          {static} - EXPECTED_LENGTH_16 : int
+          {static} - INS : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + GetChallengeCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.GetPinStatusCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + GetPinStatusCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.GetRandomCommand {
+          {static} - CLA : int
+          {static} - EXPECTED_LENGTH_MAX : int
+          {static} - EXPECTED_LENGTH_MIN : int
+          {static} - INS : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + GetRandomCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.InternalAuthenticateCommand {
+          {static} - ALGORITHM_INFORMATION_PRESENT : int
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - KEY_REFERENCE_PRESENT_ON_CARD : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - VALID_PSOALGO : Algorithm[]
+          - sanityChecker : ISanityChecker[]
+          + InternalAuthenticateCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.ListPublicKeyCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_ALL_KIND_OF_PUBLIC_KEY_OBJECTS_P1 : int
+          {static} - MODE_ALL_KIND_OF_PUBLIC_KEY_OBJECTS_P2 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + ListPublicKeyCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.LoadApplicationCommand {
+          {static} - CLA_COMMAND_CHAINING : int
+          {static} - CLA_NO_COMMAND_CHAINING : int
+          {static} - INS : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + LoadApplicationCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.ManageChannelCommand {
+          {static} - CLA : int
+          {static} - EXPECTED_LENGTH_01 : int
+          {static} - INS : int
+          {static} - MODE_AFFECTED_CHANNEL_IN_CLA_BYTE : int
+          {static} - MODE_INTENDED_ACTION_CLOSE_CHANNEL_P1 : int
+          {static} - MODE_INTENDED_ACTION_OPEN_CHANNEL_P1 : int
+          {static} - MODE_INTENDED_ACTION_OPEN_CHANNEL_P2 : int
+          {static} - MODE_INTENDED_RESET_CLOSE_CHANNEL_P1 : int
+          {static} - MODE_INTENDED_RESET_ON_APPLICATION_LEVEL_P1 : int
+          {static} - MODE_INTENDED_RESET_ON_APPLICATION_LEVEL_P2 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + ManageChannelCommand()
+          + ManageChannelCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.ManageSecurityEnvironmentCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_AFFECTED_LIST_ELEMENT_IS_DATA_DECIPHER : int
+          {static} - MODE_AFFECTED_LIST_ELEMENT_IS_DATA_ENCIPHER : int
+          {static} - MODE_AFFECTED_LIST_ELEMENT_IS_EXT_AUTH_P2 : int
+          {static} - MODE_AFFECTED_LIST_ELEMENT_IS_INT_AUTH_P2 : int
+          {static} - MODE_AFFECTED_LIST_ELEMENT_IS_SIGNATURE_CREATION : int
+          {static} - MODE_AFFECTED_LIST_ELEMENT_IS_VERIFY_CERTIFICATE : int
+          {static} - MODE_SELECT_SE_IDENTIFIER : int
+          {static} - MODE_SET_EXTERNAL_KEY_P1 : int
+          {static} - MODE_SET_INTERNAL_KEY_P1 : int
+          {static} - MODE_SET_PRIVATE_KEY_P1 : int
+          {static} - MODE_SET_PUBLIC_KEY_P1 : int
+          {static} - MODE_SET_SECRET_KEY_OBJECT_P1 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - SE_NUMBER_MAX : int
+          {static} - SE_NUMBER_MIN : int
+          - mseUsecasechecker : ISanityChecker<Enum>
+          - rangeChecker : ISanityChecker<Integer>
+          - stateChecker : ISanityChecker<Boolean>
+          + ManageSecurityEnvironmentCommand()
+          + ManageSecurityEnvironmentCommand()
+          + ManageSecurityEnvironmentCommand()
+          + ManageSecurityEnvironmentCommand()
+          + ManageSecurityEnvironmentCommand()
+          + ManageSecurityEnvironmentCommand()
+          + ManageSecurityEnvironmentCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      enum MseUseCase {
+        KEY_SELECTION_FOR_CV_CERTIFICATE_VALIDATION
+        KEY_SELECTION_FOR_DATA_DE_OR_RECODING
+        KEY_SELECTION_FOR_DATA_ENCODING
+        KEY_SELECTION_FOR_EXTERNAL_ASYMMETRIC_AUTHENTICATION
+        KEY_SELECTION_FOR_EXTERNAL_SYMMETRIC_AUTHENTICATION
+        KEY_SELECTION_FOR_INTERNAL_ASYMMETRIC_AUTHENTICATION
+        KEY_SELECTION_FOR_INTERNAL_SYMMETRIC_AUTHENTICATION
+        KEY_SELECTION_FOR_SIGNING_KEY
+        KEY_SELECTION_FOR_SYMMETRIC_CARD_CONNECTION_WITHOUT_CURVES
+        KEY_SELECTION_FOR_SYMMETRIC_CARD_CONNECTION_WITH_CURVES
+        KEY_SELECTION_FOR_SYMMETRIC_TWO_WAY_AUTHENTICATION
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.PsoComputeCryptographicChecksum {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + PsoComputeCryptographicChecksum()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.PsoComputeDigitalSignatureCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - VALID_PSOALG : Algorithm[]
+          + PsoComputeDigitalSignatureCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.PsoDecipher {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - P1 : int
+          {static} - P2 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - VALID_PSOALGO : Algorithm[]
+          + PsoDecipher()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.PsoEncipher {
+          ~ checkerPsoAlgo : ISanityChecker<Enum>
+          ~ cmdDataChecker : ISanityChecker<byte[]>
+          {static} - ANSWER_IS_CIPHER_P1 : int
+          {static} - CLA : int
+          {static} - DATA_IS_PLAINTEXT_P2 : int
+          {static} - INS : int
+          {static} - LOG : Logger
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + PsoEncipher()
+          + PsoEncipher()
+          + PsoEncipher()
+          + getStatusResponseMessages()
+          - computePlainDoEllipticCurveEncipher()
+          - computePlainDoRsaEncipher()
+          - getResult()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.PsoVerifyCertificateCommand {
+          {static} - CLA : int
+          {static} - COMMAND_DATA_WITH_CERTIFIED_TEMPLATE_P2 : int
+          {static} - COMMAND_DATA_WITH_TEMPLATE_WITH_CERTIFIED_FIELDS_P1 : int
+          {static} - INS : int
+          {static} - NO_RESPONSE_DATA_P1 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + PsoVerifyCertificateCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.PsoVerifyCryptographicChecksum {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + PsoVerifyCryptographicChecksum()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.PsoVerifyDigitalSignatureCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - LOG : Logger
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + PsoVerifyDigitalSignatureCommand()
+          + getStatusResponseMessages()
+          - computeSignatureTemplateDo()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.ReadCommand {
+          {static} - BYTE_MODULO : int
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - SFI_MARKER : int
+          - checker : ISanityChecker<Integer>
+          + ReadCommand()
+          + ReadCommand()
+          + ReadCommand()
+          + ReadCommand()
+          + ReadCommand()
+          + ReadCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.ReadRecordCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_USE_LIST_ELEMENT_P1 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          - checker : ISanityChecker<Integer>
+          + ReadRecordCommand()
+          + ReadRecordCommand()
+          + ReadRecordCommand()
+          + ReadRecordCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.SearchRecordCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_USE_LIST_ELEMENT_P1_AND_FOLLOWING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - WILDCARDSHORT : short
+          - checker : ISanityChecker<Integer>
+          + SearchRecordCommand()
+          + SearchRecordCommand()
+          + SearchRecordCommand()
+          + SearchRecordCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.SelectCommand {
+          {static} - CLA : int
+          {static} - FILE_OCCURRENCE_FIRST : int
+          {static} - FILE_OCCURRENCE_NEXT : int
+          {static} - INS : int
+          {static} - P2 : int
+          {static} - P2_FCP : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - RESPONSE_TYPE_FCP : int
+          {static} - RESPONSE_TYPE_NO_RESPONSE : int
+          {static} - SELECTION_MODE_AID : int
+          {static} - SELECTION_MODE_DF_BY_FID : int
+          {static} - SELECTION_MODE_EF_BY_FID : int
+          {static} - SELECTION_MODE_PARENT : int
+          + SelectCommand()
+          + SelectCommand()
+          + SelectCommand()
+          + SelectCommand()
+          + SelectCommand()
+          + getStatusResponseMessages()
+          - calculateP2()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.SetLogicalEofCommand {
+          {static} - BYTE_MODULO : int
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - SFI_MARKER : int
+          - checker : ISanityChecker<Integer>
+          + SetLogicalEofCommand()
+          + SetLogicalEofCommand()
+          + SetLogicalEofCommand()
+          + SetLogicalEofCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.TerminateCardUsageCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + TerminateCardUsageCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.TerminateCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_CURRENT_EF : int
+          {static} - MODE_PASSWORD_REFERENCE : int
+          {static} - MODE_PUBLIC_KEY_REFERENCE : int
+          {static} - MODE_SYM_OR_PRIVATE_KEY_REFERENCE : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + TerminateCommand()
+          + TerminateCommand()
+          + TerminateCommand()
+          + TerminateCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.TerminateDfCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + TerminateDfCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.UpdateCommand {
+          {static} - BYTE_MODULO : int
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - SFI_MARKER : int
+          - checkerCmdData : ISanityChecker<byte[]>
+          - checkerIntegerValue : ISanityChecker<Integer>
+          + UpdateCommand()
+          + UpdateCommand()
+          + UpdateCommand()
+          + UpdateCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.UpdateRecordCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_USE_LIST_ELEMENT_P1 : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + UpdateRecordCommand()
+          + UpdateRecordCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.VerifyCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_VERIFICATION_DATA : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + VerifyCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace commands {
+      class de.gematik.ti.healthcardaccess.commands.WriteCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_NO_SFI : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          {static} - SFI_MARKER : int
+          + WriteCommand()
+          + WriteCommand()
+          + getStatusResponseMessages()
+      }
+    }
+  }
+  
+
+  de.gematik.ti.healthcardaccess.commands.ActivateCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.ActivateRecordCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.ActivateRecordCommand o-- de.gematik.ti.healthcardaccess.sanitychecker.ISanityChecker : checker
+  de.gematik.ti.healthcardaccess.commands.AppendRecordCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.ChangeReferenceDataCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.DeactivateCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.DeactivateRecordCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.DeleteCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.DeleteRecordCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.DisableVerificationRequirementCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.EnableVerificationRequirementCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.EraseCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.EraseRecordCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.ExternalMutualAuthenticateCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.FingerprintCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.GeneralAuthenticateCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.GenerateAsymmetricKeyPairCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.GenerateAsymmetricKeyPairCommand o-- de.gematik.ti.healthcardaccess.commands.GenerateAsymmetricKeyPairCommand.GakpUseCase : gakpUseCase
+  de.gematik.ti.healthcardaccess.commands.GenerateAsymmetricKeyPairCommand +-down- de.gematik.ti.healthcardaccess.commands.GenerateAsymmetricKeyPairCommand.GakpUseCase
+  de.gematik.ti.healthcardaccess.commands.GetChallengeCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.GetPinStatusCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.GetRandomCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.InternalAuthenticateCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.ListPublicKeyCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.LoadApplicationCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.ManageChannelCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.ManageSecurityEnvironmentCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.ManageSecurityEnvironmentCommand +-down- de.gematik.ti.healthcardaccess.commands.ManageSecurityEnvironmentCommand.MseUseCase
+  de.gematik.ti.healthcardaccess.commands.PsoComputeCryptographicChecksum -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.PsoComputeDigitalSignatureCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.PsoDecipher -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.PsoEncipher -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.PsoVerifyCertificateCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.PsoVerifyCryptographicChecksum -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.PsoVerifyDigitalSignatureCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.ReadCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.ReadRecordCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.SearchRecordCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.SelectCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.SetLogicalEofCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.TerminateCardUsageCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.TerminateCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.TerminateDfCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.UpdateCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.UpdateRecordCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.VerifyCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.WriteCommand -up-|> de.gematik.ti.healthcardaccess.AbstractHealthCardCommand
+  de.gematik.ti.healthcardaccess.commands.WriteCommand o-- de.gematik.ti.healthcardaccess.sanitychecker.ISanityChecker : checker
+
+
+
+
+
+
+
+
+
+@enduml

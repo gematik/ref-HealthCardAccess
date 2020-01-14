@@ -1,0 +1,196 @@
+@startuml
+
+title __ESIGN's Class Diagram__\n
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.Ef {
+            {static} + C_HCI_AUT_E256 : ChciAutE256
+            {static} + C_HCI_AUT_R2048 : ChciAutR2048
+            {static} + C_HCI_ENC_E256 : ChciEncE256
+            {static} + C_HCI_ENC_R2048 : ChciEncR2048
+            {static} + C_HCI_OSIG_E256 : ChciOsigE256
+            {static} + C_HCI_OSIG_R2048 : ChciOsigR2048
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.Ef.ChciAutE256 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.Ef.ChciAutR2048 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.Ef.ChciEncE256 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.Ef.ChciEncR2048 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.Ef.ChciOsigE256 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.Ef.ChciOsigR2048 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.PrK {
+            {static} + HP_AUT_E256 : HciAutE256
+            {static} + HP_AUT_R2048 : HciAutR2048
+            {static} + HP_ENC_E256 : HciEncE256
+            {static} + HP_ENC_R2048 : HciEncR2048
+            {static} + HP_OSIG_E256 : HciOsigE256
+            {static} + HP_OSIG_R2048 : HciOsigR2048
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.PrK.HciAutE256 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.PrK.HciAutR2048 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.PrK.HciEncE256 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.PrK.HciEncR2048 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.PrK.HciOsigE256 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      namespace df.esign {
+        class cardfilesystem.smcb21mf.df.esign.PrK.HciOsigR2048 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  cardfilesystem.smcb21mf.df.esign.Ef +-down- cardfilesystem.smcb21mf.df.esign.Ef.ChciAutE256
+  cardfilesystem.smcb21mf.df.esign.Ef +-down- cardfilesystem.smcb21mf.df.esign.Ef.ChciAutR2048
+  cardfilesystem.smcb21mf.df.esign.Ef +-down- cardfilesystem.smcb21mf.df.esign.Ef.ChciEncE256
+  cardfilesystem.smcb21mf.df.esign.Ef +-down- cardfilesystem.smcb21mf.df.esign.Ef.ChciEncR2048
+  cardfilesystem.smcb21mf.df.esign.Ef +-down- cardfilesystem.smcb21mf.df.esign.Ef.ChciOsigE256
+  cardfilesystem.smcb21mf.df.esign.Ef +-down- cardfilesystem.smcb21mf.df.esign.Ef.ChciOsigR2048
+  cardfilesystem.smcb21mf.df.esign.PrK +-down- cardfilesystem.smcb21mf.df.esign.PrK.HciAutE256
+  cardfilesystem.smcb21mf.df.esign.PrK +-down- cardfilesystem.smcb21mf.df.esign.PrK.HciAutR2048
+  cardfilesystem.smcb21mf.df.esign.PrK +-down- cardfilesystem.smcb21mf.df.esign.PrK.HciEncE256
+  cardfilesystem.smcb21mf.df.esign.PrK +-down- cardfilesystem.smcb21mf.df.esign.PrK.HciEncR2048
+  cardfilesystem.smcb21mf.df.esign.PrK +-down- cardfilesystem.smcb21mf.df.esign.PrK.HciOsigE256
+  cardfilesystem.smcb21mf.df.esign.PrK +-down- cardfilesystem.smcb21mf.df.esign.PrK.HciOsigR2048
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

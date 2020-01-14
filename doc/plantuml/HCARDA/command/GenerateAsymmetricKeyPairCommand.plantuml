@@ -1,0 +1,72 @@
+@startuml
+
+ package de.gematik.ti.healthcardaccess {
+    interface IHealthCardCommand {
+        {abstract} + executeOn()
+    }
+  }
+
+ package de.gematik.ti.healthcardaccess {
+    abstract class AbstractHealthCardCommand {
+        {static} - LOG : Logger
+        {static} # NE_MAX_EXTENDED_LENGTH : int
+        {static} # NE_MAX_SHORT_LENGTH : int
+        {static} # EXPECT_ALL : int
+        # cla : int
+        # ins : int
+        # p1 : int
+        # p2 : int
+        # data : byte[]
+        # ne : int
+        # AbstractHealthCardCommand()
+        # AbstractHealthCardCommand()
+        {abstract} + getTechnicalResponseApdus()
+        - inferResponseStatusFromResponseCode()
+        + executeOn()
+        # sendApdu()
+        - getCommandApdu()
+    }
+  }
+
+  package de.gematik.ti.healthcardaccess {
+     package de.gematik.ti.healthcardaccess.commands {
+       class GenerateAsymmetricKeyPairCommand {
+           {static} - CLA : int
+           {static} - INS : int
+           {static} - MODE_GENERATE_IF_KEY_NOT_EXISTS_WITHOUT_OUTPUT_P1 : int
+           {static} - MODE_OVERWRITE_IF_KEY_EXISTS_WITHOUT_OUTPUT_P1 : int
+           {static} - MODE_READ_PUBLIC_KEY_P1 : int
+           {static} - MODE_GENERATE_IF_KEY_NOT_EXISTS_WITH_OUTPUT_P1 : int
+           {static} - MODE_OVERWRITE_IF_KEY_EXISTS_WITH_OUTPUT_P1 : int
+           {static} - MODE_AFFECTED_OBJECT_VIA_KEY_REFERENCE_LIST_P2 : int
+           {static} - NO_MEANING : int
+           {static} - technicalResponseApdus : Map<Integer, ResponseStatus>
+           + getTechnicalResponseApdus()
+           + GenerateAsymmetricKeyPairCommand()
+       }
+     }
+   }
+
+   package de.gematik.ti.healthcardaccess {
+       package de.gematik.ti.healthcardaccess.commands {
+         enum GakpUseCase {
+           GEN_KEY_WO_OVERWRITE_WO_REFERENCE_WO_OUTPUT
+           GEN_KEY_WO_OVERWRITE_W_REFERENCE_WO_OUTPUT
+           GEN_KEY_W_OVERWRITE_WO_REFERENCE_WO_OUTPUT
+           GEN_KEY_W_OVERWRITE_W_REFERENCE_WO_OUTPUT
+           READ_EXISTING_KEY_WO_REFERENCE
+           READ_EXISTING_KEY_W_REFERENCE
+           GEN_KEY_WO_OVERWRITE_WO_REFERENCE_W_OUTPUT
+           GEN_KEY_WO_OVERWRITE_W_REFERENCE_W_OUTPUT
+           GEN_KEY_W_OVERWRITE_WO_REFERENCE_W_OUTPUT
+           GEN_KEY_W_OVERWRITE_W_REFERENCE_W_OUTPUT
+         }
+       }
+     }
+
+  AbstractHealthCardCommand -up-|> IHealthCardCommand
+  GenerateAsymmetricKeyPairCommand -up-|> AbstractHealthCardCommand
+  GenerateAsymmetricKeyPairCommand o-- GakpUseCase : gakpUseCase
+  GenerateAsymmetricKeyPairCommand +-down- GakpUseCase
+
+@enduml

@@ -1,0 +1,251 @@
+@startuml
+
+
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Df {
+            {static} + AMTS : Amts
+            {static} + DPE : Dpe
+            {static} + GDD : Gdd
+            {static} + NFD : Nfd
+            {static} + OSE : Ose
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Df.Amts {
+            {static} + AID : String
+            {static} + EF : Ef
+            {static} + MRPIN : MrPin
+            {static} + PIN : Pin
+            {static} + PrK : PrK
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Df.Dpe {
+            {static} + AID : String
+            {static} + EF : Ef
+            {static} + MRPIN : MrPin
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Df.Gdd {
+            {static} + AID : String
+            {static} + EF : Ef
+            {static} + MRPIN : MrPin
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Df.Nfd {
+            {static} + AID : String
+            {static} + EF : Ef
+            {static} + MRPIN : MrPin
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Df.Ose {
+            {static} + AID : String
+            {static} + EF : Ef
+            {static} + MRPIN : MrPin
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Ef {
+            {static} + Einwilligung : Einwilligung
+            {static} + GVD : Gvd
+            {static} + Logging : Logging
+            {static} + PD : Pd
+            {static} + Pruefungsnachweis : Pruefungsnachweis
+            {static} + Standalone : Standalone
+            {static} + StatusVD : StatusVd
+            {static} + TTN : Ttn
+            {static} + VD : Vd
+            {static} + Verweis : Verweis
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Ef.Einwilligung {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Ef.Gvd {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Ef.Logging {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Ef.Pd {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Ef.Pruefungsnachweis {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Ef.Standalone {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Ef.StatusVd {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Ef.Ttn {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Ef.Vd {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        class cardfilesystem.egk2mf.df.hca.Ef.Verweis {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  cardfilesystem.egk2mf.df.hca.Df +-down- cardfilesystem.egk2mf.df.hca.Df.Amts
+  cardfilesystem.egk2mf.df.hca.Df +-down- cardfilesystem.egk2mf.df.hca.Df.Dpe
+  cardfilesystem.egk2mf.df.hca.Df +-down- cardfilesystem.egk2mf.df.hca.Df.Gdd
+  cardfilesystem.egk2mf.df.hca.Df +-down- cardfilesystem.egk2mf.df.hca.Df.Nfd
+  cardfilesystem.egk2mf.df.hca.Df +-down- cardfilesystem.egk2mf.df.hca.Df.Ose
+  cardfilesystem.egk2mf.df.hca.Ef +-down- cardfilesystem.egk2mf.df.hca.Ef.Einwilligung
+  cardfilesystem.egk2mf.df.hca.Ef +-down- cardfilesystem.egk2mf.df.hca.Ef.Gvd
+  cardfilesystem.egk2mf.df.hca.Ef +-down- cardfilesystem.egk2mf.df.hca.Ef.Logging
+  cardfilesystem.egk2mf.df.hca.Ef +-down- cardfilesystem.egk2mf.df.hca.Ef.Pd
+  cardfilesystem.egk2mf.df.hca.Ef +-down- cardfilesystem.egk2mf.df.hca.Ef.Pruefungsnachweis
+  cardfilesystem.egk2mf.df.hca.Ef +-down- cardfilesystem.egk2mf.df.hca.Ef.Standalone
+  cardfilesystem.egk2mf.df.hca.Ef +-down- cardfilesystem.egk2mf.df.hca.Ef.StatusVd
+  cardfilesystem.egk2mf.df.hca.Ef +-down- cardfilesystem.egk2mf.df.hca.Ef.Ttn
+  cardfilesystem.egk2mf.df.hca.Ef +-down- cardfilesystem.egk2mf.df.hca.Ef.Vd
+  cardfilesystem.egk2mf.df.hca.Ef +-down- cardfilesystem.egk2mf.df.hca.Ef.Verweis
+
+
+
+
+
+
+
+
+
+@enduml

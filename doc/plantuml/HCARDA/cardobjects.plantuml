@@ -1,0 +1,298 @@
+@startuml
+
+
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      class de.gematik.ti.healthcardaccess.cardobjects.ApplicationIdentifier {
+          {static} - AID_MAX_LENGTH : int
+          {static} - AID_MIN_LENGTH : int
+          - aid : byte[]
+          + ApplicationIdentifier()
+          + ApplicationIdentifier()
+          + getAid()
+          - sanityCheck()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      class de.gematik.ti.healthcardaccess.cardobjects.DedicatedFile {
+          + DedicatedFile()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      class de.gematik.ti.healthcardaccess.cardobjects.ElementaryFile {
+          + ElementaryFile()
+          + ElementaryFile()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      class de.gematik.ti.healthcardaccess.cardobjects.FileControlParameter {
+          {static} + LCS_CREATION_STATE : int
+          {static} + LCS_INITIALISATION_STATE : int
+          {static} + LCS_OPERATIONAL_STATE_ACTIVATED : int
+          {static} + LCS_OPERATIONAL_STATE_DEACTIVATED : int
+          {static} + LCS_TERMINATION_STATE : int
+          {static} + TAG_APPLICATION_IDENTIFIER : int
+          {static} + TAG_FCP : int
+          {static} + TAG_FILE_DESCRIPTOR : int
+          {static} + TAG_FILE_IDENTIFIER : int
+          {static} + TAG_LIFE_CYCLE_STATUS : int
+          {static} + TAG_NUMBER_OF_OCTET : int
+          {static} + TAG_SHORT_FILE_IDENTIFIER : int
+          - applicationIdentifier : byte[]
+          - fileDescriptor : byte[]
+          - fileIdentifier : byte[]
+          - numberOfOctet : int
+          - shortFileIdentifier : int
+          + FileControlParameter()
+          + getApplicationIdentifier()
+          + getFileDescriptor()
+          + getFileIdentifier()
+          + getLifeCycleStatus()
+          + getNumberOfOctet()
+          + toString()
+          - catchOctetStringFromTaggedObject()
+          - fillFcpElements()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      enum LifeCycleStates {
+        LCS_CREATION_STATE
+        LCS_INITIALISATION_STATE
+        LCS_OPERATIONAL_STATE_ACTIVATED
+        LCS_OPERATIONAL_STATE_DEACTIVATED
+        LCS_TERMINATION_STATE
+        MAP
+        value
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      class de.gematik.ti.healthcardaccess.cardobjects.FileIdentifier {
+          - fid : int
+          + FileIdentifier()
+          + FileIdentifier()
+          + FileIdentifier()
+          + getFid()
+          - sanityCheck()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      class de.gematik.ti.healthcardaccess.cardobjects.Format2Pin {
+          {static} - FORMAT2_PIN_FILLER : int
+          {static} - FORMAT2_PIN_SIZE : int
+          {static} - FORMAT_PIN_2_ID : int
+          {static} - MAX_DIGIT : int
+          {static} - MAX_PIN_LEN : int
+          {static} - MIN_DIGIT : int
+          {static} - MIN_PIN_LEN : int
+          {static} - NIBBLE_SIZE : int
+          - format2Pin : byte[]
+          - pin : int[]
+          + Format2Pin()
+          + getFormat2Pin()
+          + sanityCheck()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      class de.gematik.ti.healthcardaccess.cardobjects.GemCvCertificate {
+          {static} - BODY_VALID : int
+          {static} - SIGN_VALID : int
+          - certificateBody : CertificateBody
+          - certificateContent : byte[]
+          - certificateEffectiveDate : DERApplicationSpecific
+          - certificateExpirationDate : DERApplicationSpecific
+          - certificateHolderAuthorization : CertificateHolderAuthorization
+          - certificateHolderReference : DERApplicationSpecific
+          - certificateProfileIdentifier : DERApplicationSpecific
+          - certificateType : int
+          - certificationAuthorityReference : DERApplicationSpecific
+          - publicKey : PublicKeyDataObject
+          - signature : byte[]
+          - valid : int
+          + GemCvCertificate()
+          + GemCvCertificate()
+          + getCertificateContent()
+          + getCertificationAuthorityReferenceContents()
+          + getHolderReference()
+          + toASN1Primitive()
+          - buildECDSAPublicKeyFromPublicKeyDo()
+          - initFrom()
+          - setPrivateCertificateBodyData()
+          - setPrivateData()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      interface de.gematik.ti.healthcardaccess.cardobjects.ICardKeyReference {
+          {static} + DF_SPECIFIC_PWD_MARKER : int
+          {abstract} + calculateKeyReference()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      interface de.gematik.ti.healthcardaccess.cardobjects.ICardObjectIdentifier {
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      class de.gematik.ti.healthcardaccess.cardobjects.Key {
+          {static} - MAX_KEY_ID : int
+          {static} - MIN_KEY_ID : int
+          - keyId : int
+          + Key()
+          + calculateKeyReference()
+          + getkeyId()
+          - sanityCheck()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      class de.gematik.ti.healthcardaccess.cardobjects.Password {
+          {static} - MAX_PWD_ID : int
+          {static} - MIN_PWD_ID : int
+          - pwdId : int
+          + Password()
+          + calculateKeyReference()
+          + getPwdId()
+          - sanityCheck()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      class de.gematik.ti.healthcardaccess.cardobjects.PsoAlgorithm {
+          - flagSscMacIncrement : boolean
+          + PsoAlgorithm()
+          + getAlgorithm()
+          + getIdentifier()
+          + getName()
+          + isFlagSscMacIncrement()
+          + setFlagSscMacIncrement()
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      enum Algorithm {
+        AUTHENTICATE_AES_SESSIONKEY_4SM
+        AUTHENTICATE_AES_SESSIONKEY_4TC
+        AUTHENTICATE_DES_SESSIONKEY_4SM
+        AUTHENTICATE_DES_SESSIONKEY_4TC
+        AUTHENTICATE_ELC_ASYNCHRON_ADMIN
+        AUTHENTICATE_ELC_ROLE_AUTHENTICATION
+        AUTHENTICATE_ELC_ROLE_CHECK
+        AUTHENTICATE_ELC_SESSIONKEY_4SM
+        AUTHENTICATE_ELC_SESSIONKEY_4TC
+        AUTHENTICATE_RSA_CLIENT_AUTHENTICATION
+        AUTHENTICATE_RSA_ROLE_AUTHENTICATION_OPTION_CVC
+        AUTHENTICATE_RSA_ROLE_CHECK_OPTION_CVC
+        AUTHENTICATE_RSA_SESSIONKEY_4SM_OPTION_DES
+        AUTHENTICATE_RSA_SESSIONKEY_4TC_OPTION_DES
+        DE_ENCRYPT_AES_SESSIONKEY
+        DE_ENCRYPT_DES_SESSIONKEY_OPTION_DES
+        DE_ENCRYPT_ELC_SHARED_SECRET_CALCULATION
+        DE_ENCRYPT_RSA_DECIPHER_OAEP
+        DE_ENCRYPT_RSA_DECIPHER_PKCS1_V1_5
+        DE_ENCRYPT_RSA_ENCIPHER_OAEP
+        DE_ENCRYPT_RSA_ENCIPHER_PKCS1_V1_5
+        SIGN_VERIFY_AES_SESSIONKEY
+        SIGN_VERIFY_DES_SESSIONKEY_OPTION_DES
+        SIGN_VERIFY_ECDSA
+        SIGN_VERIFY_PSS
+        SIGN_VERIFY_SIGN9796_2_DS2
+        SIGN_VERIFY_SIGNPKCS1_V1_5
+        identifier
+        name
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace cardobjects {
+      class de.gematik.ti.healthcardaccess.cardobjects.ShortFileIdentifier {
+          {static} - MAX_VALUE : int
+          {static} - MIN_VALUE : int
+          - sfId : int
+          + ShortFileIdentifier()
+          + ShortFileIdentifier()
+          + getSfId()
+          - sanityCheck()
+      }
+    }
+  }
+  
+
+  de.gematik.ti.healthcardaccess.cardobjects.ApplicationIdentifier .up.|> de.gematik.ti.healthcardaccess.cardobjects.ICardObjectIdentifier
+  de.gematik.ti.healthcardaccess.cardobjects.DedicatedFile .up.|> de.gematik.ti.healthcardaccess.ICardItem
+  de.gematik.ti.healthcardaccess.cardobjects.ElementaryFile .up.|> de.gematik.ti.healthcardaccess.ICardItem
+  de.gematik.ti.healthcardaccess.cardobjects.ElementaryFile o-- de.gematik.ti.healthcardaccess.cardobjects.FileIdentifier : fid
+  de.gematik.ti.healthcardaccess.cardobjects.ElementaryFile o-- de.gematik.ti.healthcardaccess.cardobjects.ShortFileIdentifier : sfid
+  de.gematik.ti.healthcardaccess.cardobjects.FileControlParameter .up.|> de.gematik.ti.healthcardaccess.ICardItem
+  de.gematik.ti.healthcardaccess.cardobjects.FileControlParameter o-- de.gematik.ti.healthcardaccess.cardobjects.FileControlParameter.LifeCycleStates : lifeCycleStatus
+  de.gematik.ti.healthcardaccess.cardobjects.FileControlParameter +-down- de.gematik.ti.healthcardaccess.cardobjects.FileControlParameter.LifeCycleStates
+  de.gematik.ti.healthcardaccess.cardobjects.FileIdentifier .up.|> de.gematik.ti.healthcardaccess.cardobjects.ICardObjectIdentifier
+  de.gematik.ti.healthcardaccess.cardobjects.Format2Pin .up.|> de.gematik.ti.healthcardaccess.ICardItem
+  de.gematik.ti.healthcardaccess.cardobjects.GemCvCertificate .up.|> de.gematik.ti.healthcardaccess.ICardItem
+  de.gematik.ti.healthcardaccess.cardobjects.GemCvCertificate -up-|> org.spongycastle.asn1.ASN1Object
+  de.gematik.ti.healthcardaccess.cardobjects.Key .up.|> de.gematik.ti.healthcardaccess.ICardItem
+  de.gematik.ti.healthcardaccess.cardobjects.Key .up.|> de.gematik.ti.healthcardaccess.cardobjects.ICardKeyReference
+  de.gematik.ti.healthcardaccess.cardobjects.Password .up.|> de.gematik.ti.healthcardaccess.ICardItem
+  de.gematik.ti.healthcardaccess.cardobjects.Password .up.|> de.gematik.ti.healthcardaccess.cardobjects.ICardKeyReference
+  de.gematik.ti.healthcardaccess.cardobjects.PsoAlgorithm o-- de.gematik.ti.healthcardaccess.cardobjects.PsoAlgorithm.Algorithm : algorithm
+  de.gematik.ti.healthcardaccess.cardobjects.PsoAlgorithm +-down- de.gematik.ti.healthcardaccess.cardobjects.PsoAlgorithm.Algorithm
+  de.gematik.ti.healthcardaccess.cardobjects.ShortFileIdentifier .up.|> de.gematik.ti.healthcardaccess.cardobjects.ICardObjectIdentifier
+
+
+
+
+
+
+
+
+
+@enduml

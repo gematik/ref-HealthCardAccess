@@ -1,0 +1,123 @@
+@startuml
+
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.cardobjects {
+    }
+}
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.commands {
+    }
+}
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.healthcards {
+    }
+}
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.operation {
+    }
+}
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.operation {
+        package de.gematik.ti.healthcardaccess.operation.executor {
+        }
+    }
+}
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.result {
+    }
+}
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.sanitychecker {
+    }
+}
+package de.gematik.ti.healthcardaccess {
+    interface IHealthCardType {
+    }
+}
+package de.gematik.ti.healthcardaccess {
+    interface IHealthCardCommand {
+        {abstract} + executeOn()
+    }
+}
+package de.gematik.ti.healthcardaccess {
+    abstract class AbstractHealthCardCommand {
+        {static} - LOG : Logger
+        {static} # NE_MAX_EXTENDED_LENGTH : int
+        {static} # NE_MAX_SHORT_LENGTH : int
+        {static} # EXPECT_ALL : int
+        # cla : int
+        # ins : int
+        # p1 : int
+        # p2 : int
+        # data : byte[]
+        # ne : int
+        # AbstractHealthCardCommand()
+        # AbstractHealthCardCommand()
+        {abstract} + getTechnicalResponseApdus()
+        - inferResponseStatusFromResponseCode()
+        + executeOn()
+        # sendApdu()
+        - getCommandApdu()
+    }
+}
+
+package de.gematik.ti.healthcardaccess {
+    class HealthCard {
+        {static} + BASIC_CHANNEL_IDX : int
+        {static} # MAX_LOGICAL_CHANNELS : int
+        - currentCardChannel : CardChannel
+        - associatedCard : Card
+        - status : IHealthCardStatus
+        - responseBufferSize : int
+        - openChannels : Vector<CardChannel>
+        + HealthCard()
+        # HealthCard()
+        + openLogicalChannel()
+        + closeChannel()
+        + setChannel()
+        + getCurrentCardChannel()
+        + getResponseBufferSize()
+        + getStatus()
+    }
+}
+
+package de.gematik.ti.healthcardaccess {
+    interface IHealthCard {
+        {abstract} + getCurrentCardChannel()
+        {abstract} + getResponseBufferSize()
+        {abstract} + getStatus()
+    }
+}
+package de.gematik.ti.healthcardaccess {
+    interface IHealthCardStatus {
+        {abstract} + isValid()
+    }
+}
+
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.security {
+    }
+}
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.security {
+        package de.gematik.ti.healthcardaccess.security.keyentities {
+        }
+    }
+}
+
+HealthCard -up-|> IHealthCard
+de.gematik.ti.healthcardaccess.healthcards -up-|> IHealthCardStatus
+IHealthCardStatus o-- HealthCard
+de.gematik.ti.healthcardaccess.healthcards -up-|> IHealthCardType
+de.gematik.ti.healthcardaccess.commands -up-|> AbstractHealthCardCommand
+AbstractHealthCardCommand -up-|> IHealthCardCommand
+AbstractHealthCardCommand o-- de.gematik.ti.healthcardaccess.result : response
+de.gematik.ti.healthcardaccess.commands o-- de.gematik.ti.healthcardaccess.cardobjects
+de.gematik.ti.healthcardaccess.commands o-- de.gematik.ti.healthcardaccess.sanitychecker
+de.gematik.ti.healthcardaccess.operation o-- de.gematik.ti.healthcardaccess.commands
+de.gematik.ti.healthcardaccess.operation o-- de.gematik.ti.healthcardaccess.healthcards
+de.gematik.ti.healthcardaccess.operation o-- HealthCard
+de.gematik.ti.healthcardaccess.operation o-- de.gematik.ti.healthcardaccess.operation.executor
+de.gematik.ti.healthcardaccess.commands ..> de.gematik.ti.healthcardaccess.security
+
+@enduml

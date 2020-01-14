@@ -1,0 +1,85 @@
+@startuml
+
+
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.ose {
+          class cardfilesystem.egk2mf.df.hca.df.ose.Ef {
+              {static} + OSE : Ose
+              {static} + StatusOse : StatusOse
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.ose {
+          class cardfilesystem.egk2mf.df.hca.df.ose.Ef.Ose {
+              {static} + FID : int
+              {static} + SFID : int
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.ose {
+          class cardfilesystem.egk2mf.df.hca.df.ose.Ef.StatusOse {
+              {static} + FID : int
+              {static} + SFID : int
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.ose {
+          class cardfilesystem.egk2mf.df.hca.df.ose.MrPin {
+              {static} + OSE : Ose
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.ose {
+          class cardfilesystem.egk2mf.df.hca.df.ose.MrPin.Ose {
+              {static} + PW : int
+          }
+        }
+      }
+    }
+  }
+  
+
+  cardfilesystem.egk2mf.df.hca.df.ose.Ef +-down- cardfilesystem.egk2mf.df.hca.df.ose.Ef.Ose
+  cardfilesystem.egk2mf.df.hca.df.ose.Ef +-down- cardfilesystem.egk2mf.df.hca.df.ose.Ef.StatusOse
+  cardfilesystem.egk2mf.df.hca.df.ose.MrPin +-down- cardfilesystem.egk2mf.df.hca.df.ose.MrPin.Ose
+
+
+
+
+
+
+
+
+
+@enduml

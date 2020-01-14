@@ -1,0 +1,144 @@
+@startuml
+
+package de.gematik.ti.healthcardaccess {
+    interface ICardItem {
+    }
+  }
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.cardobjects {
+      class DedicatedFile {
+          + DedicatedFile()
+      }
+    }
+  }
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.cardobjects {
+      class ElementaryFile {
+          + ElementaryFile()
+          + ElementaryFile()
+      }
+    }
+  }
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.cardobjects {
+      class FileControlParameter {
+          {static} + LCS_CREATION_STATE : int
+          {static} + LCS_INITIALISATION_STATE : int
+          {static} + LCS_OPERATIONAL_STATE_ACTIVATED : int
+          {static} + LCS_OPERATIONAL_STATE_DEACTIVATED : int
+          {static} + LCS_TERMINATION_STATE : int
+          {static} + TAG_FCP : int
+          {static} + TAG_NUMBER_OF_OCTET : int
+          {static} + TAG_FILE_DESCRIPTOR : int
+          {static} + TAG_FILE_IDENTIFIER : int
+          {static} + TAG_APPLICATION_IDENTIFIER : int
+          {static} + TAG_SHORT_FILE_IDENTIFIER : int
+          {static} + TAG_LIFE_CYCLE_STATUS : int
+          - numberOfOctet : int
+          - fileDescriptor : byte[]
+          - fileIdentifier : byte[]
+          - applicationIdentifier : byte[]
+          - shortFileIdentifier : int
+          + FileControlParameter()
+          - fillFcpElements()
+          + getFileDescriptor()
+          + getFileIdentifier()
+          + getApplicationIdentifier()
+          + getLifeCycleStatus()
+          + getNumberOfOctet()
+          + toString()
+          - catchOctetStringFromTaggedObject()
+      }
+    }
+  }
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.cardobjects {
+      class Format2Pin {
+          {static} - NIBBLE_SIZE : int
+          {static} - MIN_PIN_LEN : int
+          {static} - MAX_PIN_LEN : int
+          {static} - FORMAT_PIN_2_ID : int
+          {static} - FORMAT2_PIN_SIZE : int
+          {static} - FORMAT2_PIN_FILLER : int
+          {static} - MIN_DIGIT : int
+          {static} - MAX_DIGIT : int
+          - pin : int[]
+          - format2Pin : byte[]
+          + Format2Pin()
+          + getFormat2Pin()
+          + sanityCheck()
+      }
+    }
+  }
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.cardobjects {
+      class GemCvCertificate {
+          - certificateContent : byte[]
+          - certificateBody : CertificateBody
+          - signature : byte[]
+          - valid : int
+          {static} - BODY_VALID : int
+          {static} - SIGN_VALID : int
+          - seq : ASN1InputStream
+          - certificateProfileIdentifier : DERApplicationSpecific
+          - certificationAuthorityReference : DERApplicationSpecific
+          - publicKey : PublicKeyDataObject
+          - certificateHolderReference : DERApplicationSpecific
+          - certificateHolderAuthorization : CertificateHolderAuthorization
+          - certificateEffectiveDate : DERApplicationSpecific
+          - certificateExpirationDate : DERApplicationSpecific
+          - certificateType : int
+          - setPrivateData()
+          + GemCvCertificate()
+          + GemCvCertificate()
+          - initFrom()
+          - setPrivateCertificateBodyData()
+          + toASN1Primitive()
+          - buildECDSAPublicKeyFromPublicKeyDo()
+          + getCertificationAuthorityReferenceContents()
+          + getCertificateContent()
+          + getHolderReference()
+      }
+    }
+  }
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.cardobjects {
+      class Key {
+          {static} - MIN_KEY_ID : int
+          {static} - MAX_KEY_ID : int
+          - keyId : int
+          + Key()
+          + getkeyId()
+          - sanityCheck()
+          + calculateKeyReference()
+      }
+    }
+  }
+
+
+  package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.cardobjects {
+      class Password {
+          {static} - MIN_PWD_ID : int
+          {static} - MAX_PWD_ID : int
+          - pwdId : int
+          + Password()
+          + getPwdId()
+          - sanityCheck()
+          + calculateKeyReference()
+      }
+    }
+  }
+
+
+
+DedicatedFile -up-|> ICardItem
+ElementaryFile -up-|> ICardItem
+FileControlParameter -up-|> ICardItem
+Format2Pin -up-|> ICardItem
+GemCvCertificate -up-|> ICardItem
+Key -up-|> ICardItem
+Password -up-|> ICardItem
+
+
+@enduml

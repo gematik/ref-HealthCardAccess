@@ -1,0 +1,112 @@
+buildscript {
+    dependencies {
+        classpath "de.gematik:gematik-parent-plugin:1.1.3"
+        classpath "de.gematik:documentation-plugin:1.1.2"
+    }
+}
+
+apply plugin: "de.gematik.parent"
+apply plugin: "de.gematik.publish"
+apply plugin: "de.gematik.asciidoctor"
+apply plugin: "de.gematik.javadoc"
+
+
+gematikDocumentation {
+    projectShortcut = "HCARDA"
+    documentVersionReference = "version_healthcard_access"
+}
+
+gematikPublish {
+    name = "HealthCardAcess"
+    description = "The HealthCardAcess library is an low level framework for accessing smart cards of the telematic infrastructure."
+    gitHubProjectName = "ref-HealthCardAcess"
+}
+
+group = 'de.gematik.ti'
+
+description = """HealthCardAcess"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    //we want display the following test events
+    testLogging {
+        events "PASSED", "STARTED", "FAILED", "SKIPPED"
+    }
+    filter {
+        // UnitTests
+        includeTestsMatching "de.gematik.ti.healthcardaccess.cardobjects.*"
+        includeTestsMatching "de.gematik.ti.healthcardaccess.commands.*CommandTest"
+        includeTestsMatching "de.gematik.ti.healthcardaccess.operation.*"
+        includeTestsMatching "de.gematik.ti.healthcardaccess.result.*"
+        // IntegTests
+        includeTestsMatching "de.gematik.ti.healthcardaccess.commands.*IntegTest"
+
+    }
+
+}
+
+dependencies {
+    implementation group: 'de.gematik.ti', name: 'cardreader.access', version: '1.1.2'
+    implementation group: 'de.gematik.ti', name: 'cardreader.provider.api', version: '1.2.1'
+    implementation group: 'de.gematik.ti', name: 'utils', version: '1.2.1'
+
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.9'
+    implementation group: 'com.madgag.spongycastle', name: 'prov', version: '1.58.0.0'
+    implementation group: 'com.madgag.spongycastle', name: 'core', version: '1.58.0.0'
+
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'org.greenrobot:eventbus:3.1.1'
+    testImplementation group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
+    testImplementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.8.1'
+    testImplementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.8.1'
+    testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.9.5'
+    testImplementation group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.50'
+    testImplementation group: 'org.yaml', name: 'snakeyaml', version: '1.9'
+
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.7.13'
+    testImplementation group: 'org.powermock', name: 'powermock-api-mockito2', version: '2.0.0-RC.4'
+    testImplementation group: 'org.powermock', name: 'powermock-classloading-base', version: '2.0.0-RC.4'
+}
+
+task sourceJar(type: Jar) {
+    archiveClassifier.set("sources")
+    from "${project.buildDir}/../src/main/java/"
+    include "**/*.java"
+}
+task testSourceJar(type: Jar) {
+    archiveClassifier.set("test-sources")
+    from "${project.buildDir}/../src/test/java/"
+    include "**/*.java"
+}
+task testJar(type: Jar) {
+    archiveClassifier.set("test")
+    from "${project.buildDir}/classes/java/test/"
+    include "**/*.class"
+}
+task adocJar(type: Jar) {
+    archiveClassifier.set("adoc")
+    from "${project.buildDir}/../doc"
+    into "${project.name}"
+    exclude "**/generated/**/*.*"
+
+}
+task javadocJar(type: Jar) {
+    archiveClassifier.set("javadoc")
+    from "${project.buildDir}/docs/javadoc/"
+    into "${project.name}"
+}
+
+artifacts {
+    archives sourceJar
+    archives testSourceJar
+    archives adocJar
+    archives javadocJar
+    archives testJar
+}
+

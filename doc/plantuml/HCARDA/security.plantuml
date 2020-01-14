@@ -1,0 +1,160 @@
+@startuml
+
+  package de.gematik.ti.healthcardaccess.security {
+    package de.gematik.ti.healthcardaccess.security.keyentities {
+      class MacPcd {
+          {static} - LOG : Logger
+          {static} - MAX : int
+          {static} - TAG_6 : int
+          {static} - TAG_49 : int
+          - macPcd : byte[]
+          - sharedSecretKBytes : byte[]
+          - keyP : KeyParameter
+          - mac : Mac
+          - authTokenY : byte[]
+          - authTokenX : byte[]
+          - kEnc : byte[]
+          - kMac : byte[]
+          - protocolID : String
+          - curve : ECCurve
+          - pk2Picc : byte[]
+          - pcdSkX2 : BigInteger
+          - macPicc2 : byte[]
+          - pk1Picc : byte[]
+          + MacPcd()
+          - generateMacPcdPicc2()
+          - generateAuthToken()
+          - generateSharedSecretK()
+          - createAsn1AuthToken()
+          + getMacPcd()
+          + getKEnc()
+          + getMacPicc2()
+          + getKMac()
+      }
+    }
+  }
+  
+
+  package de.gematik.ti.healthcardaccess.security {
+    package de.gematik.ti.healthcardaccess.security.keyentities {
+      class NonceZ {
+          {static} - LOG : Logger
+          - nonceZ : byte[]
+          + NonceZ()
+          + getNonceZ()
+      }
+    }
+  }
+  
+
+  package de.gematik.ti.healthcardaccess.security {
+    package de.gematik.ti.healthcardaccess.security.keyentities {
+      class Pk1Pcd {
+          {static} - AES_BLOCK_SIZE : int
+          {static} - BYTE_LENGTH : int
+          - nonceSInt : BigInteger
+          - curve : Fp
+          - ecPointG : ECPoint
+          - randomGenerator : SecureRandom
+          - pcdSkX1 : BigInteger
+          + Pk1Pcd()
+          + getPk1Pcd()
+          ~ getNonceSInt()
+          ~ getCurve()
+          ~ getEcPointG()
+          ~ getPcdSkX1()
+          ~ getRandomGenerator()
+      }
+    }
+  }
+  
+
+  package de.gematik.ti.healthcardaccess.security {
+    package de.gematik.ti.healthcardaccess.security.keyentities {
+      class Pk1Picc {
+          {static} - LOG : Logger
+          - pk1Picc : byte[]
+          + Pk1Picc()
+          + getPk1Picc()
+      }
+    }
+  }
+  
+
+  package de.gematik.ti.healthcardaccess.security {
+    package de.gematik.ti.healthcardaccess.security.keyentities {
+      class Pk2Pcd {
+          {static} - BYTE_LENGTH : int
+          - curve : ECCurve
+          - pointGS : ECPoint
+          - randomGenerator : SecureRandom
+          - pcdSkX2 : BigInteger
+          + Pk2Pcd()
+          + getPk2Pcd()
+          ~ getCurve()
+          ~ getPcdSkX2()
+      }
+    }
+  }
+  
+
+  package de.gematik.ti.healthcardaccess.security {
+    package de.gematik.ti.healthcardaccess.security.keyentities {
+      class Pk2Picc {
+          {static} - LOG : Logger
+          - pk2Picc : byte[]
+          + Pk2Picc()
+          + getPk2Picc()
+      }
+    }
+  }
+
+
+      package de.gematik.ti.healthcardaccess.security {
+        class KeyDerivationFunction {
+            {static} - CHECKSUMLENGTH : int
+            {static} - AES128LENGTH : int
+            {static} - OFFSETLENGTH : int
+            {static} - ENCLASTBYTE : int
+            {static} - MACLASTBYTE : int
+            {static} - PASSWORDLASTBYTE : int
+            - KeyDerivationFunction()
+            {static} + getAES128Key()
+            {static} - replaceLastKeyByte()
+        }
+      }
+
+
+      package de.gematik.ti.healthcardaccess.security {
+        enum Mode {
+          ENC
+          MAC
+          PASSWORD
+        }
+      }
+
+
+      package de.gematik.ti.healthcardaccess.security {
+        class Utilities {
+            {static} - UNCOMPRESSEDPOINTVALUE : int
+            - Utilities()
+            {static} + byteArrayToECPoint()
+            {static} + getKeyObjectEncoded()
+        }
+      }
+
+
+    KeyDerivationFunction +-down- Mode
+    MacPcd ..>KeyDerivationFunction
+    MacPcd ..>Utilities
+    MacPcd ..>Pk2Pcd
+    Pk1Pcd ..>KeyDerivationFunction
+    Pk2Pcd ..>KeyDerivationFunction
+    Pk1Picc ..>Utilities
+    Pk2Picc ..>Utilities
+    NonceZ ..>Utilities
+
+  
+
+
+@enduml

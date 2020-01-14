@@ -1,0 +1,85 @@
+@startuml
+
+ package de.gematik.ti.healthcardaccess {
+    interface IHealthCardCommand {
+        {abstract} + executeOn()
+    }
+  }
+
+ package de.gematik.ti.healthcardaccess {
+    abstract class AbstractHealthCardCommand {
+        {static} - LOG : Logger
+        {static} # NE_MAX_EXTENDED_LENGTH : int
+        {static} # NE_MAX_SHORT_LENGTH : int
+        {static} # EXPECT_ALL : int
+        # cla : int
+        # ins : int
+        # p1 : int
+        # p2 : int
+        # data : byte[]
+        # ne : int
+        # AbstractHealthCardCommand()
+        # AbstractHealthCardCommand()
+        {abstract} + getTechnicalResponseApdus()
+        - inferResponseStatusFromResponseCode()
+        + executeOn()
+        # sendApdu()
+        - getCommandApdu()
+    }
+  }
+
+ package de.gematik.ti.healthcardaccess {
+     package de.gematik.ti.healthcardaccess.commands {
+       class ManageSecurityEnvironmentCommand {
+           {static} - CLA : int
+           {static} - INS : int
+           {static} - MODE_SELECT_SE_IDENTIFIER : int
+           {static} - MODE_SET_INTERNAL_KEY_P1 : int
+           {static} - MODE_SET_EXTERNAL_KEY_P1 : int
+           {static} - MODE_SET_SECRET_KEY_OBJECT_P1 : int
+           {static} - MODE_SET_PRIVATE_KEY_P1 : int
+           {static} - MODE_SET_PUBLIC_KEY_P1 : int
+           {static} - MODE_AFFECTED_LIST_ELEMENT_IS_INT_AUTH_P2 : int
+           {static} - MODE_AFFECTED_LIST_ELEMENT_IS_EXT_AUTH_P2 : int
+           {static} - MODE_AFFECTED_LIST_ELEMENT_IS_SIGNATURE_CREATION : int
+           {static} - MODE_AFFECTED_LIST_ELEMENT_IS_VERIFY_CERTIFICATE : int
+           {static} - MODE_AFFECTED_LIST_ELEMENT_IS_DATA_DECIPHER : int
+           {static} - MODE_AFFECTED_LIST_ELEMENT_IS_DATA_ENCIPHER : int
+           {static} - SE_NUMBER_MIN : int
+           {static} - SE_NUMBER_MAX : int
+           {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+           + getTechnicalResponseApdus()
+           + ManageSecurityEnvironmentCommand()
+           + ManageSecurityEnvironmentCommand()
+           + ManageSecurityEnvironmentCommand()
+           + ManageSecurityEnvironmentCommand()
+           + ManageSecurityEnvironmentCommand()
+           + ManageSecurityEnvironmentCommand()
+           - checkKeyObjectNotNull()
+       }
+     }
+   }
+
+   package de.gematik.ti.healthcardaccess {
+       package de.gematik.ti.healthcardaccess.commands {
+         enum MseUseCase {
+           KEY_SELECTION_FOR_INTERNAL_SYMMETRIC_AUTHENTICATION
+           KEY_SELECTION_FOR_INTERNAL_ASYMMETRIC_AUTHENTICATION
+           KEY_SELECTION_FOR_EXTERNAL_SYMMETRIC_AUTHENTICATION
+           KEY_SELECTION_FOR_EXTERNAL_ASYMMETRIC_AUTHENTICATION
+           KEY_SELECTION_FOR_SYMMETRIC_TWO_WAY_AUTHENTICATION
+           KEY_SELECTION_FOR_SYMMETRIC_CARD_CONNECTION_WITHOUT_CURVES
+           KEY_SELECTION_FOR_SYMMETRIC_CARD_CONNECTION_WITH_CURVES
+           KEY_SELECTION_FOR_SIGNING_KEY
+           KEY_SELECTION_FOR_CV_CERTIFICATE_VALIDATION
+           KEY_SELECTION_FOR_DATA_DE_OR_RECODING
+           KEY_SELECTION_FOR_DATA_ENCODING
+         }
+       }
+     }
+
+  AbstractHealthCardCommand -up-|> IHealthCardCommand
+  ManageSecurityEnvironmentCommand -up-|> AbstractHealthCardCommand
+  ManageSecurityEnvironmentCommand o-- MseUseCase : mseUseCase
+  ManageSecurityEnvironmentCommand +-down- MseUseCase
+@enduml

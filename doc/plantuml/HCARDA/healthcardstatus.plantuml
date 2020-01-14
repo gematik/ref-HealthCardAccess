@@ -1,0 +1,46 @@
+@startuml
+
+  package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.healthcards {
+      class HealthCardStatusInvalid {
+          + isValid()
+      }
+    }
+  }
+  
+
+  package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.healthcards {
+      class HealthCardStatusUnknown {
+          + isValid()
+      }
+    }
+  }
+  
+
+  package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.healthcards {
+      class HealthCardStatusValid {
+          + HealthCardStatusValid()
+          + getHealthCardType()
+          + setHealthCardType()
+          + isValid()
+      }
+    }
+  }
+  
+  package de.gematik.ti.healthcardaccess {
+        interface IHealthCardStatus {
+        }
+  }
+  package de.gematik.ti.healthcardaccess {
+        interface IHealthCardType {
+        }
+  }
+
+  HealthCardStatusInvalid -up-|> IHealthCardStatus
+  HealthCardStatusUnknown -up-|> IHealthCardStatus
+  HealthCardStatusValid -up-|> IHealthCardStatus
+  HealthCardStatusValid o-- IHealthCardType : healthCardType
+
+@enduml

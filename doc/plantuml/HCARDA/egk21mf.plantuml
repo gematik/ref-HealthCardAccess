@@ -1,0 +1,392 @@
+@startuml
+
+
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Df {
+          {static} + CIA_ESIGN : CiaEsign
+          {static} + ESIGN : Esign
+          {static} + HCA : Hca
+          {static} + QES : Qes
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Df.CiaEsign {
+          {static} + AID : String
+          {static} + EF : Ef
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Df.Esign {
+          {static} + AID : String
+          {static} + EF : Ef
+          {static} + PrK : PrK
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Df.Hca {
+          {static} + AID : String
+          {static} + DF : Df
+          {static} + EF : Ef
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Df.Qes {
+          {static} + AID : String
+          {static} + EF : Ef
+          {static} + PIN : Pin
+          {static} + PrK : PrK
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Ef {
+          {static} + ATR : Atr
+          {static} + C_CA_EGK_CS_E256 : CcaEgkCsE256
+          {static} + C_EGK_AUT_CVC_E256 : CegkAutCvcE256
+          {static} + CardAccess : CardAccess
+          {static} + DIR : Dir
+          {static} + GDO : Gdo
+          {static} + Version : Version
+          {static} + Version2 : Version2
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Ef.Atr {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Ef.CardAccess {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Ef.CcaEgkCsE256 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Ef.CegkAutCvcE256 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Ef.Dir {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Ef.Gdo {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Ef.Version {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Ef.Version2 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.MrPin {
+          {static} + AMTS : Amts
+          {static} + DPE : Dpe
+          {static} + GDD : Gdd
+          {static} + NFD : Nfd
+          {static} + NFD_READ : NfdRead
+          {static} + OSE : Ose
+          {static} + home : Home
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.MrPin.Amts {
+          {static} + PWID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.MrPin.Dpe {
+          {static} + PWID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.MrPin.Gdd {
+          {static} + PWID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.MrPin.Home {
+          {static} + PWID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.MrPin.Nfd {
+          {static} + PWID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.MrPin.NfdRead {
+          {static} + PWID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.MrPin.Ose {
+          {static} + PWID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Pin {
+          {static} + CH : Ch
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Pin.Ch {
+          {static} + PWID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.PrK {
+          {static} + EGK_AUT_CVC_E256 : EgkAutCvcE256
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.PrK.EgkAutCvcE256 {
+          {static} + KID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Sk {
+          {static} + CAN : Can
+          {static} + CMS_AES128 : CmsAes128
+          {static} + CMS_AES256 : CmsAes256
+          {static} + VSD_AES128 : VsdAes128
+          {static} + VSD_AES256 : VsdAes256
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Sk.Can {
+          {static} + KID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Sk.CmsAes128 {
+          {static} - KID : int
+          + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Sk.CmsAes256 {
+          {static} - KID : int
+          + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      interface cardfilesystem.egk21mf.Sk.ICMSSymkey {
+          {abstract} + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      interface cardfilesystem.egk21mf.Sk.IVSDSymkey {
+          {abstract} + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Sk.VsdAes128 {
+          {static} - KID : int
+          + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      class cardfilesystem.egk21mf.Sk.VsdAes256 {
+          {static} - KID : int
+          + getKID()
+      }
+    }
+  }
+  
+
+  cardfilesystem.egk21mf.Df +-down- cardfilesystem.egk21mf.Df.CiaEsign
+  cardfilesystem.egk21mf.Df +-down- cardfilesystem.egk21mf.Df.Esign
+  cardfilesystem.egk21mf.Df +-down- cardfilesystem.egk21mf.Df.Hca
+  cardfilesystem.egk21mf.Df +-down- cardfilesystem.egk21mf.Df.Qes
+  cardfilesystem.egk21mf.Ef +-down- cardfilesystem.egk21mf.Ef.Atr
+  cardfilesystem.egk21mf.Ef +-down- cardfilesystem.egk21mf.Ef.CardAccess
+  cardfilesystem.egk21mf.Ef +-down- cardfilesystem.egk21mf.Ef.CcaEgkCsE256
+  cardfilesystem.egk21mf.Ef +-down- cardfilesystem.egk21mf.Ef.CegkAutCvcE256
+  cardfilesystem.egk21mf.Ef +-down- cardfilesystem.egk21mf.Ef.Dir
+  cardfilesystem.egk21mf.Ef +-down- cardfilesystem.egk21mf.Ef.Gdo
+  cardfilesystem.egk21mf.Ef +-down- cardfilesystem.egk21mf.Ef.Version
+  cardfilesystem.egk21mf.Ef +-down- cardfilesystem.egk21mf.Ef.Version2
+  cardfilesystem.egk21mf.MrPin +-down- cardfilesystem.egk21mf.MrPin.Amts
+  cardfilesystem.egk21mf.MrPin +-down- cardfilesystem.egk21mf.MrPin.Dpe
+  cardfilesystem.egk21mf.MrPin +-down- cardfilesystem.egk21mf.MrPin.Gdd
+  cardfilesystem.egk21mf.MrPin +-down- cardfilesystem.egk21mf.MrPin.Home
+  cardfilesystem.egk21mf.MrPin +-down- cardfilesystem.egk21mf.MrPin.Nfd
+  cardfilesystem.egk21mf.MrPin +-down- cardfilesystem.egk21mf.MrPin.NfdRead
+  cardfilesystem.egk21mf.MrPin +-down- cardfilesystem.egk21mf.MrPin.Ose
+  cardfilesystem.egk21mf.Pin +-down- cardfilesystem.egk21mf.Pin.Ch
+  cardfilesystem.egk21mf.PrK +-down- cardfilesystem.egk21mf.PrK.EgkAutCvcE256
+  cardfilesystem.egk21mf.Sk +-down- cardfilesystem.egk21mf.Sk.Can
+  cardfilesystem.egk21mf.Sk +-down- cardfilesystem.egk21mf.Sk.CmsAes128
+  cardfilesystem.egk21mf.Sk +-down- cardfilesystem.egk21mf.Sk.CmsAes256
+  cardfilesystem.egk21mf.Sk +-down- cardfilesystem.egk21mf.Sk.ICMSSymkey
+  cardfilesystem.egk21mf.Sk +-down- cardfilesystem.egk21mf.Sk.IVSDSymkey
+  cardfilesystem.egk21mf.Sk +-down- cardfilesystem.egk21mf.Sk.VsdAes128
+  cardfilesystem.egk21mf.Sk +-down- cardfilesystem.egk21mf.Sk.VsdAes256
+  cardfilesystem.egk21mf.Sk.CmsAes128 .up.|> cardfilesystem.egk21mf.Sk.ICMSSymkey
+  cardfilesystem.egk21mf.Sk.CmsAes256 .up.|> cardfilesystem.egk21mf.Sk.ICMSSymkey
+  cardfilesystem.egk21mf.Sk.VsdAes128 .up.|> cardfilesystem.egk21mf.Sk.IVSDSymkey
+  cardfilesystem.egk21mf.Sk.VsdAes256 .up.|> cardfilesystem.egk21mf.Sk.IVSDSymkey
+
+
+
+
+
+
+
+
+
+@enduml

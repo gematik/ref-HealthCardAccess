@@ -1,0 +1,100 @@
+@startuml
+
+
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.dpe {
+          class cardfilesystem.egk2mf.df.hca.df.dpe.Ef {
+              {static} + DPE : Dpe
+              {static} + StatusDPE : StatusDpe
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.dpe {
+          class cardfilesystem.egk2mf.df.hca.df.dpe.Ef.Dpe {
+              {static} + FID : int
+              {static} + SFID : int
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.dpe {
+          class cardfilesystem.egk2mf.df.hca.df.dpe.Ef.StatusDpe {
+              {static} + FID : int
+              {static} + SFID : int
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.dpe {
+          class cardfilesystem.egk2mf.df.hca.df.dpe.MrPin {
+              {static} + DPE : Dpe
+              {static} + DPE_READ : DpeRead
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.dpe {
+          class cardfilesystem.egk2mf.df.hca.df.dpe.MrPin.Dpe {
+              {static} + PWID : int
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.dpe {
+          class cardfilesystem.egk2mf.df.hca.df.dpe.MrPin.DpeRead {
+              {static} + PWID : int
+          }
+        }
+      }
+    }
+  }
+  
+
+  cardfilesystem.egk2mf.df.hca.df.dpe.Ef +-down- cardfilesystem.egk2mf.df.hca.df.dpe.Ef.Dpe
+  cardfilesystem.egk2mf.df.hca.df.dpe.Ef +-down- cardfilesystem.egk2mf.df.hca.df.dpe.Ef.StatusDpe
+  cardfilesystem.egk2mf.df.hca.df.dpe.MrPin +-down- cardfilesystem.egk2mf.df.hca.df.dpe.MrPin.Dpe
+  cardfilesystem.egk2mf.df.hca.df.dpe.MrPin +-down- cardfilesystem.egk2mf.df.hca.df.dpe.MrPin.DpeRead
+
+
+
+
+
+
+
+
+
+@enduml

@@ -1,0 +1,56 @@
+/*
+ * Copyright (c) 2020 gematik GmbH
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package de.gematik.ti.healthcardaccess.commands;
+
+public enum ParameterEnum {
+    PARAMETER_INT_OFFSET,
+    PARAMETER_PIN,
+    PARAMETER_INT_NE,
+    PARAMETER_INT_RECORDNUMBER,
+    PARAMETER_INT_FCPLENGTH,
+    PARAMETER_INT_GETCHALLENGE_LENGTH,
+    PARAMETER_INT_GETRANDOM,
+    PARAMETER_INT_CHANNELNUMBER,
+    PARAMETER_SID,
+    PARAMETER_FILEIDENTIFIER,
+    PARAMETER_APPLICATIONIDENTIFIER,
+    PARAMETER_INT_IDDOMAIN,
+    PARAMETER_GEMCVC,
+    PARAMETER_ECPUBLICKEY,
+    PARAMETER_FINGERPRINT,
+    // PARAMETER_BYTEARRAY_MSE,
+    PARAMETER_BYTEARRAY_DEFAULT,
+    PARAMETER_RSAPUBLICKEY,
+    PARAMETER_BYTEARRAY_INTERNLAUTH,
+    PARAMETER_BYTEARRAY_REFERENCE,
+    PARAMETER_BYTEARRAY_EXTERNALAUTH,
+    PARAMETER_BYTEARRAY_CMDDATA,
+    PARAMETER_BYTEARRAY_OID,
+    PARAMETER_STRING_PACEINFOP256r1,
+    PARAMETER_STRING_PACEINFOP384r1,
+    PARAMETER_STRING_PACEINFOP512r1,
+    PARAMETER_BYTEARRAY_CAN,
+    PARAMETER_BYTEARRAY_NONZEZ,
+    PARAMETER_BYTEARRAY_PK1,
+    PARAMETER_BYTEARRAY_PK1PICC,
+    PARAMETER_BYTEARRAY_PK2,
+    PARAMETER_BYTEARRAY_PK2VP,
+    PARAMETER_BYTEARRAY_PK2PICC,
+    PARAMETER_BYTEARRAY_MACPCD,
+    PARAMETER_BYTEARRAY_MACPICC,
+    PARAMETER_STRING_ECCURVE_PK1
+}

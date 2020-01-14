@@ -1,0 +1,100 @@
+@startuml
+
+
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.nfd {
+          class cardfilesystem.egk2mf.df.hca.df.nfd.Ef {
+              {static} + NFD : Nfd
+              {static} + StatusNFD : EfStatusNfd
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.nfd {
+          class cardfilesystem.egk2mf.df.hca.df.nfd.Ef.EfStatusNfd {
+              {static} + FID : int
+              {static} + SFID : int
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.nfd {
+          class cardfilesystem.egk2mf.df.hca.df.nfd.Ef.Nfd {
+              {static} + FID : int
+              {static} + SFID : int
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.nfd {
+          class cardfilesystem.egk2mf.df.hca.df.nfd.MrPin {
+              {static} + NFD : Nfd
+              {static} + NFD_READ : NfdRead
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.nfd {
+          class cardfilesystem.egk2mf.df.hca.df.nfd.MrPin.Nfd {
+              {static} + PWID : int
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk2mf {
+      namespace df.hca {
+        namespace df.nfd {
+          class cardfilesystem.egk2mf.df.hca.df.nfd.MrPin.NfdRead {
+              {static} + PWID : int
+          }
+        }
+      }
+    }
+  }
+  
+
+  cardfilesystem.egk2mf.df.hca.df.nfd.Ef +-down- cardfilesystem.egk2mf.df.hca.df.nfd.Ef.EfStatusNfd
+  cardfilesystem.egk2mf.df.hca.df.nfd.Ef +-down- cardfilesystem.egk2mf.df.hca.df.nfd.Ef.Nfd
+  cardfilesystem.egk2mf.df.hca.df.nfd.MrPin +-down- cardfilesystem.egk2mf.df.hca.df.nfd.MrPin.Nfd
+  cardfilesystem.egk2mf.df.hca.df.nfd.MrPin +-down- cardfilesystem.egk2mf.df.hca.df.nfd.MrPin.NfdRead
+
+
+
+
+
+
+
+
+
+@enduml

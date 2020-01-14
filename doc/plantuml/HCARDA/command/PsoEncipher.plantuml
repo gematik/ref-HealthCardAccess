@@ -1,0 +1,52 @@
+@startuml
+
+ package de.gematik.ti.healthcardaccess {
+    interface IHealthCardCommand {
+        {abstract} + executeOn()
+    }
+  }
+
+ package de.gematik.ti.healthcardaccess {
+    abstract class AbstractHealthCardCommand {
+        {static} - LOG : Logger
+        {static} # NE_MAX_EXTENDED_LENGTH : int
+        {static} # NE_MAX_SHORT_LENGTH : int
+        {static} # EXPECT_ALL : int
+        # cla : int
+        # ins : int
+        # p1 : int
+        # p2 : int
+        # data : byte[]
+        # ne : int
+        # AbstractHealthCardCommand()
+        # AbstractHealthCardCommand()
+        {abstract} + getTechnicalResponseApdus()
+        - inferResponseStatusFromResponseCode()
+        + executeOn()
+        # sendApdu()
+        - getCommandApdu()
+    }
+  }
+
+ package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.commands {
+      class PsoEncipher {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - ANSWER_IS_CIPHER_P1 : int
+          {static} - DATA_IS_PLAINTEXT_P2 : int
+          {static} - technicalResponseApdus : Map<Integer, ResponseStatus>
+          + getTechnicalResponseApdus()
+          + PsoEncipher()
+          + PsoEncipher()
+          + PsoEncipher()
+          - computePlainDoRsaEncipher()
+          - computePlainDoEllipticCurveEncipher()
+      }
+    }
+  }
+
+  AbstractHealthCardCommand -up-|> IHealthCardCommand
+  PsoEncipher -up-|> AbstractHealthCardCommand
+
+@enduml

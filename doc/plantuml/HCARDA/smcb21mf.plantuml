@@ -1,0 +1,291 @@
+@startuml
+
+
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Df {
+          {static} + ESIGN : Esign
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Df.Esign {
+          {static} + AID : String
+          {static} + EF : Ef
+          {static} + PrK : PrK
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Ef {
+          {static} + ATR : Atr
+          {static} + C_CA_SMC_CS_E256 : CcaSmcCsE256
+          {static} + C_CA_SMC_CS_R2048 : CcaSmcCsR2048
+          {static} + C_SMC_AUTD_SUK_CVC_E256 : CsmcAutdSukCvcE256
+          {static} + C_SMC_AUTR_CVC_E256 : CsmcAutrCvcE256
+          {static} + C_SMC_AUTR_CVC_R2048 : CsmcAutrCvcR2048
+          {static} + DIR : Dir
+          {static} + GDO : Gdo
+          {static} + Version2 : Version2
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Ef.Atr {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Ef.CcaSmcCsE256 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Ef.CcaSmcCsR2048 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Ef.CsmcAutdSukCvcE256 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Ef.CsmcAutrCvcE256 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Ef.CsmcAutrCvcR2048 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Ef.Dir {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Ef.Gdo {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Ef.Version2 {
+          {static} + FID : int
+          {static} + SFID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Pin {
+          {static} + SMC : Smc
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Pin.Smc {
+          {static} + PWID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.PrK {
+          {static} + SMC_AUTD_SUK_CVC_E256 : SmcAutdSukCvcE256
+          {static} + SMC_AUTR_CVC_E256 : SmcAutrCvcE256
+          {static} + SMC_AUTR_CVC_R2048 : SmcAutrCvcR2048
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.PrK.SmcAutdSukCvcE256 {
+          {static} + KID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.PrK.SmcAutrCvcE256 {
+          {static} + KID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.PrK.SmcAutrCvcR2048 {
+          {static} + KID : int
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Sk {
+          {static} + CMS_AES128 : CmsAes128
+          {static} + CMS_AES256 : CmsAes256
+          {static} + CUP_AES128 : CupAes128
+          {static} + CUP_AES256 : CupAes256
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Sk.CmsAes128 {
+          {static} - KID : int
+          + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Sk.CmsAes256 {
+          {static} - KID : int
+          + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Sk.CupAes128 {
+          {static} - KID : int
+          + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      class cardfilesystem.smcb21mf.Sk.CupAes256 {
+          {static} - KID : int
+          + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      interface cardfilesystem.smcb21mf.Sk.ICMSSymkey {
+          {abstract} + getKID()
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb21mf {
+      interface cardfilesystem.smcb21mf.Sk.ICUPSymkey {
+          {abstract} + getKID()
+      }
+    }
+  }
+  
+
+  cardfilesystem.smcb21mf.Df +-down- cardfilesystem.smcb21mf.Df.Esign
+  cardfilesystem.smcb21mf.Ef +-down- cardfilesystem.smcb21mf.Ef.Atr
+  cardfilesystem.smcb21mf.Ef +-down- cardfilesystem.smcb21mf.Ef.CcaSmcCsE256
+  cardfilesystem.smcb21mf.Ef +-down- cardfilesystem.smcb21mf.Ef.CcaSmcCsR2048
+  cardfilesystem.smcb21mf.Ef +-down- cardfilesystem.smcb21mf.Ef.CsmcAutdSukCvcE256
+  cardfilesystem.smcb21mf.Ef +-down- cardfilesystem.smcb21mf.Ef.CsmcAutrCvcE256
+  cardfilesystem.smcb21mf.Ef +-down- cardfilesystem.smcb21mf.Ef.CsmcAutrCvcR2048
+  cardfilesystem.smcb21mf.Ef +-down- cardfilesystem.smcb21mf.Ef.Dir
+  cardfilesystem.smcb21mf.Ef +-down- cardfilesystem.smcb21mf.Ef.Gdo
+  cardfilesystem.smcb21mf.Ef +-down- cardfilesystem.smcb21mf.Ef.Version2
+  cardfilesystem.smcb21mf.Pin +-down- cardfilesystem.smcb21mf.Pin.Smc
+  cardfilesystem.smcb21mf.PrK +-down- cardfilesystem.smcb21mf.PrK.SmcAutdSukCvcE256
+  cardfilesystem.smcb21mf.PrK +-down- cardfilesystem.smcb21mf.PrK.SmcAutrCvcE256
+  cardfilesystem.smcb21mf.PrK +-down- cardfilesystem.smcb21mf.PrK.SmcAutrCvcR2048
+  cardfilesystem.smcb21mf.Sk +-down- cardfilesystem.smcb21mf.Sk.CmsAes128
+  cardfilesystem.smcb21mf.Sk +-down- cardfilesystem.smcb21mf.Sk.CmsAes256
+  cardfilesystem.smcb21mf.Sk +-down- cardfilesystem.smcb21mf.Sk.CupAes128
+  cardfilesystem.smcb21mf.Sk +-down- cardfilesystem.smcb21mf.Sk.CupAes256
+  cardfilesystem.smcb21mf.Sk +-down- cardfilesystem.smcb21mf.Sk.ICMSSymkey
+  cardfilesystem.smcb21mf.Sk +-down- cardfilesystem.smcb21mf.Sk.ICUPSymkey
+  cardfilesystem.smcb21mf.Sk.CmsAes128 .up.|> cardfilesystem.smcb21mf.Sk.ICMSSymkey
+  cardfilesystem.smcb21mf.Sk.CmsAes256 .up.|> cardfilesystem.smcb21mf.Sk.ICMSSymkey
+  cardfilesystem.smcb21mf.Sk.CupAes128 .up.|> cardfilesystem.smcb21mf.Sk.ICUPSymkey
+  cardfilesystem.smcb21mf.Sk.CupAes256 .up.|> cardfilesystem.smcb21mf.Sk.ICUPSymkey
+
+
+
+
+
+
+
+
+
+@enduml

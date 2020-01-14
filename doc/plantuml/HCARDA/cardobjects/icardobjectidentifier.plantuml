@@ -1,0 +1,54 @@
+@startuml
+
+package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.cardobjects {
+      class ApplicationIdentifier {
+          {static} - AID_MIN_LENGTH : int
+          {static} - AID_MAX_LENGTH : int
+          - aid : byte[]
+          + ApplicationIdentifier()
+          + ApplicationIdentifier()
+          + getAid()
+          - sanityCheck()
+      }
+    }
+  }
+
+  package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.cardobjects {
+      class FileIdentifier {
+          - fid : int
+          + getFid()
+          + FileIdentifier()
+          + FileIdentifier()
+          + FileIdentifier()
+          - sanityCheck()
+      }
+    }
+  }
+
+ package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.cardobjects {
+      interface ICardObjectIdentifier {
+      }
+    }
+  }
+
+  package de.gematik.ti.healthcardaccess {
+      package de.gematik.ti.healthcardaccess.cardobjects {
+        class ShortFileIdentifier {
+            {static} - MIN_VALUE : int
+            {static} - MAX_VALUE : int
+            - sfId : int
+            + ShortFileIdentifier()
+            + ShortFileIdentifier()
+            + getSfId()
+            - sanityCheck()
+        }
+      }
+    }
+
+  ApplicationIdentifier -up-|> ICardObjectIdentifier
+  FileIdentifier -up-|> ICardObjectIdentifier
+  ShortFileIdentifier -up-|> ICardObjectIdentifier
+@enduml

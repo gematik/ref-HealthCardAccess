@@ -1,0 +1,94 @@
+@startuml
+
+
+
+  namespace cardfilesystem {
+    class cardfilesystem.Egk21FileSystem {
+        {static} + AID : String
+        {static} + DF : Df
+        {static} + EF : Ef
+        {static} + FID : int
+        {static} + MRPIN : MrPin
+        {static} + PIN : Pin
+        {static} + PrK : PrK
+        {static} + SK : Sk
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    class cardfilesystem.Egk2FileSystem {
+        {static} + AID : String
+        {static} + DF : Df
+        {static} + EF : Ef
+        {static} + FID : int
+        {static} + MRPIN : MrPin
+        {static} + PIN : Pin
+        {static} + PrK : PrK
+        {static} + SK : Sk
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    class cardfilesystem.Hba21FileSystem {
+        {static} + AID : String
+        {static} + DF : Df
+        {static} + EF : Ef
+        {static} + FID : int
+        {static} + PIN : Pin
+        {static} + PrK : PrK
+        {static} + SK : Sk
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    class cardfilesystem.Hba2FileSystem {
+        {static} + AID : String
+        {static} + DF : Df
+        {static} + EF : Ef
+        {static} + FID : int
+        {static} + PIN : Pin
+        {static} + PrK : PrK
+        {static} + SK : Sk
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    class cardfilesystem.Smcb21FileSystem {
+        {static} + AID : String
+        {static} + DF : Df
+        {static} + EF : Ef
+        {static} + FID : int
+        {static} + PIN : Pin
+        {static} + PrK : PrK
+        {static} + SK : Sk
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    class cardfilesystem.Smcb2FileSystem {
+        {static} + AID : String
+        {static} + DF : Df
+        {static} + EF : Ef
+        {static} + FID : int
+        {static} + PIN : Pin
+        {static} + PrK : PrK
+        {static} + SK : Sk
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+@enduml

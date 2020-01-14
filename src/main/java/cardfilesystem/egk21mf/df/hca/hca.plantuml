@@ -1,0 +1,231 @@
+@startuml
+
+title __HCA's Class Diagram__\n
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Df {
+            {static} + AMTS : Amts
+            {static} + DPE : Dpe
+            {static} + GDD : Gdd
+            {static} + NFD : Nfd
+            {static} + OSE : Ose
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Df.Amts {
+            {static} + AID : String
+            {static} + EF : Ef
+            {static} + PrK : PrK
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Df.Dpe {
+            {static} + AID : String
+            {static} + EF : Ef
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Df.Gdd {
+            {static} + AID : String
+            {static} + EF : Ef
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Df.Nfd {
+            {static} + AID : String
+            {static} + EF : Ef
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Df.Ose {
+            {static} + AID : String
+            {static} + EF : Ef
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Ef {
+            {static} + Einwilligung : Einwilligung
+            {static} + GVD : Gvd
+            {static} + Logging : Logging
+            {static} + PD : Pd
+            {static} + Pruefungsnachweis : Pruefungsnachweis
+            {static} + Standalone : Standalone
+            {static} + StatusVD : StatusVd
+            {static} + VD : Vd
+            {static} + Verweis : Verweis
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Ef.Einwilligung {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Ef.Gvd {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Ef.Logging {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Ef.Pd {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Ef.Pruefungsnachweis {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Ef.Standalone {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Ef.StatusVd {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Ef.Vd {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace egk21mf {
+      namespace df.hca {
+        class cardfilesystem.egk21mf.df.hca.Ef.Verweis {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  cardfilesystem.egk21mf.df.hca.Df +-down- cardfilesystem.egk21mf.df.hca.Df.Amts
+  cardfilesystem.egk21mf.df.hca.Df +-down- cardfilesystem.egk21mf.df.hca.Df.Dpe
+  cardfilesystem.egk21mf.df.hca.Df +-down- cardfilesystem.egk21mf.df.hca.Df.Gdd
+  cardfilesystem.egk21mf.df.hca.Df +-down- cardfilesystem.egk21mf.df.hca.Df.Nfd
+  cardfilesystem.egk21mf.df.hca.Df +-down- cardfilesystem.egk21mf.df.hca.Df.Ose
+  cardfilesystem.egk21mf.df.hca.Ef +-down- cardfilesystem.egk21mf.df.hca.Ef.Einwilligung
+  cardfilesystem.egk21mf.df.hca.Ef +-down- cardfilesystem.egk21mf.df.hca.Ef.Gvd
+  cardfilesystem.egk21mf.df.hca.Ef +-down- cardfilesystem.egk21mf.df.hca.Ef.Logging
+  cardfilesystem.egk21mf.df.hca.Ef +-down- cardfilesystem.egk21mf.df.hca.Ef.Pd
+  cardfilesystem.egk21mf.df.hca.Ef +-down- cardfilesystem.egk21mf.df.hca.Ef.Pruefungsnachweis
+  cardfilesystem.egk21mf.df.hca.Ef +-down- cardfilesystem.egk21mf.df.hca.Ef.Standalone
+  cardfilesystem.egk21mf.df.hca.Ef +-down- cardfilesystem.egk21mf.df.hca.Ef.StatusVd
+  cardfilesystem.egk21mf.df.hca.Ef +-down- cardfilesystem.egk21mf.df.hca.Ef.Vd
+  cardfilesystem.egk21mf.df.hca.Ef +-down- cardfilesystem.egk21mf.df.hca.Ef.Verweis
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

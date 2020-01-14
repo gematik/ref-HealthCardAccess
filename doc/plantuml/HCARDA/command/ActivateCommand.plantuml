@@ -1,0 +1,54 @@
+@startuml
+
+ package de.gematik.ti.healthcardaccess {
+    interface IHealthCardCommand {
+        {abstract} + executeOn()
+    }
+  }
+
+ package de.gematik.ti.healthcardaccess {
+    abstract class AbstractHealthCardCommand {
+        {static} - LOG : Logger
+        {static} # NE_MAX_EXTENDED_LENGTH : int
+        {static} # NE_MAX_SHORT_LENGTH : int
+        {static} # EXPECT_ALL : int
+        # cla : int
+        # ins : int
+        # p1 : int
+        # p2 : int
+        # data : byte[]
+        # ne : int
+        # AbstractHealthCardCommand()
+        # AbstractHealthCardCommand()
+        {abstract} + getTechnicalResponseApdus()
+        - inferResponseStatusFromResponseCode()
+        + executeOn()
+        # sendApdu()
+        - getCommandApdu()
+    }
+  }
+
+ package de.gematik.ti.healthcardaccess {
+    package de.gematik.ti.healthcardaccess.commands {
+      class ActivateCommand {
+          {static} - CLA : int
+          {static} - INS : int
+          {static} - MODE_CURRENT_SELECTION : int
+          {static} - MODE_PASSWORD_REFERENCE : int
+          {static} - MODE_SYM_OR_PRIVATE_KEY_REFERENCE : int
+          {static} - MODE_PUBLIC_KEY_REFERENCE : int
+          {static} - NO_MEANING : int
+          {static} - RESPONSE_MESSAGES : Map<Integer, ResponseStatus>
+          + getTechnicalResponseApdus()
+          + ActivateCommand()
+          + ActivateCommand()
+          + ActivateCommand()
+          + ActivateCommand()
+      }
+    }
+  }
+
+  AbstractHealthCardCommand -up-|> IHealthCardCommand
+  ActivateCommand -up-|> AbstractHealthCardCommand
+
+@enduml

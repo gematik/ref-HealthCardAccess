@@ -1,0 +1,115 @@
+@startuml
+
+
+
+  namespace cardfilesystem {
+    namespace smcb2mf {
+      namespace df.esign {
+        class cardfilesystem.smcb2mf.df.esign.Ef {
+            {static} + C_HCI_AUT_R2048 : ChciAutR2048
+            {static} + C_HCI_ENC_R2048 : ChciEncR2048
+            {static} + C_HCI_OSIG_R2048 : ChciOsigR2048
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb2mf {
+      namespace df.esign {
+        class cardfilesystem.smcb2mf.df.esign.Ef.ChciAutR2048 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb2mf {
+      namespace df.esign {
+        class cardfilesystem.smcb2mf.df.esign.Ef.ChciEncR2048 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb2mf {
+      namespace df.esign {
+        class cardfilesystem.smcb2mf.df.esign.Ef.ChciOsigR2048 {
+            {static} + FID : int
+            {static} + SFID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb2mf {
+      namespace df.esign {
+        class cardfilesystem.smcb2mf.df.esign.PrK {
+            {static} + HP_AUT_R2048 : HciAutR2048
+            {static} + HP_ENC_R2048 : HciEncR2048
+            {static} + HP_OSIG_R2048 : HciOsigR2048
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb2mf {
+      namespace df.esign {
+        class cardfilesystem.smcb2mf.df.esign.PrK.HciAutR2048 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb2mf {
+      namespace df.esign {
+        class cardfilesystem.smcb2mf.df.esign.PrK.HciEncR2048 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  namespace cardfilesystem {
+    namespace smcb2mf {
+      namespace df.esign {
+        class cardfilesystem.smcb2mf.df.esign.PrK.HciOsigR2048 {
+            {static} + KID : int
+        }
+      }
+    }
+  }
+  
+
+  cardfilesystem.smcb2mf.df.esign.Ef +-down- cardfilesystem.smcb2mf.df.esign.Ef.ChciAutR2048
+  cardfilesystem.smcb2mf.df.esign.Ef +-down- cardfilesystem.smcb2mf.df.esign.Ef.ChciEncR2048
+  cardfilesystem.smcb2mf.df.esign.Ef +-down- cardfilesystem.smcb2mf.df.esign.Ef.ChciOsigR2048
+  cardfilesystem.smcb2mf.df.esign.PrK +-down- cardfilesystem.smcb2mf.df.esign.PrK.HciAutR2048
+  cardfilesystem.smcb2mf.df.esign.PrK +-down- cardfilesystem.smcb2mf.df.esign.PrK.HciEncR2048
+  cardfilesystem.smcb2mf.df.esign.PrK +-down- cardfilesystem.smcb2mf.df.esign.PrK.HciOsigR2048
+
+
+
+
+
+
+
+
+
+@enduml

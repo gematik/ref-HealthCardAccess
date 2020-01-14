@@ -1,0 +1,12 @@
+ifndef::javadoc[]
+include::config.adoc[]
+
+== Introduction
+
+endif::javadoc[]
+
+This part describes the usage of low level HealthCardAccess API in order to send
+smartcard commands to a smartcard connected to card reader.
+
+.HealthCardAccess layer API
+image::root/hcarda_layer.png[caption="{figure-caption} {counter:figure}: "]

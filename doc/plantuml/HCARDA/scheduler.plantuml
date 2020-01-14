@@ -1,0 +1,56 @@
+@startuml
+
+
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace operation {
+      namespace scheduler {
+        class de.gematik.ti.healthcardaccess.operation.scheduler.DefaultScheduler {
+            {static} - instance : DefaultScheduler
+            {static} + getInstance()
+            + observerScheduler()
+            + subscriberScheduler()
+        }
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace operation {
+      namespace scheduler {
+        interface de.gematik.ti.healthcardaccess.operation.scheduler.Scheduler {
+            {abstract} + observerScheduler()
+            {abstract} + subscriberScheduler()
+        }
+      }
+    }
+  }
+  
+
+  namespace de.gematik.ti.healthcardaccess {
+    namespace operation {
+      namespace scheduler {
+        class de.gematik.ti.healthcardaccess.operation.scheduler.TestScheduler {
+            {static} - instance : TestScheduler
+            {static} + getInstance()
+            + observerScheduler()
+            + subscriberScheduler()
+        }
+      }
+    }
+  }
+  
+
+  de.gematik.ti.healthcardaccess.operation.scheduler.DefaultScheduler .up.|> de.gematik.ti.healthcardaccess.operation.scheduler.Scheduler
+  de.gematik.ti.healthcardaccess.operation.scheduler.TestScheduler .up.|> de.gematik.ti.healthcardaccess.operation.scheduler.Scheduler
+
+
+
+
+
+
+
+
+
+@enduml

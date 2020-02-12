@@ -40,7 +40,7 @@ public class SelectCommand extends AbstractHealthCardCommand {
     private static final int FILE_OCCURRENCE_FIRST = 0x00;
     private static final int FILE_OCCURRENCE_NEXT = 0x02;
 
-    private static final int P2_FCP = 0x02;
+    private static final int P2_FCP = 0x04;
     private static final int P2 = 0x0C;
 
     private static final Map<Integer, Response.ResponseStatus> RESPONSE_MESSAGES = new HashMap<>();

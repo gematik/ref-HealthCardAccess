@@ -402,9 +402,9 @@ SELECTCOMMAND_APDU-3:
 
 # SelectCommand(FileIdentifier fid, boolean selectNextElseFirstOccurrence, boolean requestFcp, int fcpLength)
 SELECTCOMMAND_APDU-5:
-  apdu-true-true: 00A40102022F0164
+  apdu-true-true: 00A40104022F0164
   apdu-true-false: 00A4010C022F01
-  apdu-false-true: 00A40202022F0164
+  apdu-false-true: 00A40204022F0164
   apdu-false-false: 00A4020C022F01
 
 # ------------------------------------------------------------------------------------------------------------------------------------------
